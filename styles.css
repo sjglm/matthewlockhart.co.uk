@@ -1,0 +1,146 @@
+.intro-container{
+    text-align: center;
+    margin-top: 48px;
+}
+
+.introduction-bar{
+    margin-left: 12.5%;
+    margin-top: 48px;
+    width: 75%;
+    height: 3px;
+    background-color: rgb(143, 143, 143);
+}
+
+.links-container{
+    margin: 48px;
+    text-align: center;
+}
+
+.links-container a{
+    margin: 12px;
+    width: 200px;
+}
+
+.links-container-content{
+    margin: 24px;
+}
+
+.projects-container{
+    text-align: center;
+}
+
+.grid-content{
+    margin: 48px;
+}
+
+.card{
+  overflow: hidden !important ;
+}
+
+.project-bar{
+    margin-left: 12.5%;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    width: 75%;
+    height: 3px;
+    background-color: rgb(143, 143, 143);
+}
+
+.tag-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  
+  .tag {  
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    margin: 0 1px;
+    color: white;
+    font-size: 12px;
+  }
+
+  .tag.python{
+    background-color: rgb(20, 117, 197);
+  }
+
+  .tag.sql{
+    background-color: blueviolet;
+  }
+
+  .tag.jinja{
+    background-color: rgb(75, 75, 75);
+  }
+
+  .tag.pytorch{
+    background-color: rgb(255, 145, 0);
+  }
+
+  .tag.scraping{
+    background-color: rgb(14, 199, 14);
+  }
+
+  .tag.flask{
+    background-color: rgb(214, 214, 214);
+    color: black;
+  }
+
+  .tag.csharp{
+    background-color: rgb(98, 43, 226);
+  }
+
+  .tag.winforms{
+    background-color: rgb(98, 43, 226);
+  }
+
+  .tag.opengl{
+    background-color: rgb(28, 107, 160);
+  }
+
+  .tag.opentk{
+    background-color: rgb(71, 145, 255);
+  }
+
+  .tag.net{
+    background-color: rgb(98, 43, 226);
+  }
+
+  .tag.unity{
+    background-color: rgb(219, 219, 219);
+    color: black;
+  }
+
+
+
+  .navbar-brand{
+    display: flex;
+    flex:1;
+    justify-content: center;
+    font-size: 32px;
+    color:white;
+}
+.navbar-bottom-band {
+    height: 7px;
+    background: white;
+    background-image: var(--gradient);
+    background-size: 200%;
+    animation: band-animation 10s infinite;
+  }
+
+@keyframes band-animation{
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
+  
+:root{
+    --gradient: linear-gradient(90deg, #ff00b9, #008aff);
+}
