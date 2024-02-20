@@ -30,11 +30,12 @@
 }
 
 .grid-content{
-    margin: 48px;
+    margin: 48px auto;
+    max-width: 60%;
 }
 
 .card{
-  overflow: hidden !important ;
+  overflow: hidden !important;
 }
 
 .project-bar{
