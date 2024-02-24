@@ -47,10 +47,6 @@
     background-color: rgb(143, 143, 143);
 }
 
-.btn-custom:hover{
-  background-color: green;
-}
-
 .tag-container {
     display: flex;
     justify-content: center;
