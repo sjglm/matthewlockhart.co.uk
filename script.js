@@ -30,7 +30,6 @@ goToTopBtn.addEventListener('mouseleave', () => {
 });
 
 window.onscroll = function() {scrollFunction()};
-
 function goToTop()
 {
     window.scrollTo({

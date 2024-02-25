@@ -3,7 +3,7 @@
     margin-top: 48px;
 }
 
-.introduction-bar{
+.bar{
     margin-left: 12.5%;
     margin-top: 48px;
     width: 75%;
@@ -36,15 +36,6 @@
 
 .card{
   overflow: hidden !important;
-}
-
-.project-bar{
-    margin-left: 12.5%;
-    margin-top: 48px;
-    margin-bottom: 48px;
-    width: 75%;
-    height: 3px;
-    background-color: rgb(143, 143, 143);
 }
 
 .tag-container {
@@ -163,4 +154,8 @@
   font-size: 16px;
   cursor: pointer;
   z-index: 1000;
+}
+
+.github-container{
+  text-align: center;
 }
