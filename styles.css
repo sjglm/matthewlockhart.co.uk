@@ -108,6 +108,16 @@
     color: black;
   }
 
+  .tag.rust{
+    background-color: rgb(189, 189, 189);
+    color: white;
+  }
+
+  .tag.cuda{
+    background-color: rgb(118, 185, 0);
+    color: white;
+  }
+
 
 
   .navbar-brand{
