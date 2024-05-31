@@ -11,6 +11,11 @@
     background-color: rgb(143, 143, 143);
 }
 
+.experience-container {
+  margin-top: 48px;
+  text-align: left;
+}
+
 .links-container{
     margin: 48px;
     text-align: center;
@@ -26,6 +31,7 @@
 }
 
 .projects-container{
+    margin: 48px;
     text-align: center;
 }
 
