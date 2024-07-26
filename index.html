@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+    <link href="Packages/lightbox.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="Assets/ML.png">
 </head>
 <body>
@@ -44,7 +45,7 @@
         <div class="display-5">Projects</div>
         <div class="" style="color:gray">GitHub Repo's available upon request</div>
         <div class="grid-content">
-          <div class="row row-cols-1 row-cols-md-2 g-4">
+          <div class="row row-cols-1 row-cols-md-3 g-4">
             <div class="col">
               <div class="card">
                 <img src="Assets/IDENTIFY.png" class="card-img-top" alt="Purple background with the text Identify in the foreground" />
@@ -161,10 +162,38 @@
             </div>
           </div>
         </div>
-        <div class="bar"></div>
     </div>
 
+    <div class="game-dev-container">
+      <div class="display-5">Game Dev Projects</div>
+      <div class="" style="color:rgb(255, 0, 234)">Click images for Gallery</div>
+      <div class="grid-content">
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                  <div class="card">
+                      <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png" data-lightbox="gallery" data-title="Enter the Dungeon">
+                          <img src="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png" class="card-img-top" alt="An image of the 'Enter the Dungeon' map." />
+                      </a>
+                      <div class="card-body">
+                          <div class="tag-container">
+                              <span class="tag lua"><i class="fab fa-code"> Lua</i></span>
+                          </div>
+                          <p class="card-text">
+                              A project focused on creating an engaging, multiplayer obstacle course game using Lua scripting for game logic including a variety of obstacles, persistent player data, player controllers and more. 
+                              The project uses high-quality 3D models and carefully considered world design to deliver a good looking game within the low-poly artstyle.
+                          </p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-2.png" data-lightbox="gallery" data-title="Enter the Dungeon - Image 2" style="display:none;"></a>
+      <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-3.png" data-lightbox="gallery" data-title="Enter the Dungeon - Image 3" style="display:none;"></a>
+      <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-4.png" data-lightbox="gallery" data-title="Enter the Dungeon - Image 4" style="display:none;"></a>
+      <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-5.png" data-lightbox="gallery" data-title="Enter the Dungeon - Image 5" style="display:none;"></a>
+    </div>
     <div class="links-container">
+
       <div class="display-5">My Links</div>
       <div class="links-container-content">
           <a id="linkedin-btn" class="btn btn-lg btn-custom" style="background: #0077b5; color: white" href="https://linkedin.com/in/mglockhart" target="_blank">
@@ -180,5 +209,6 @@
   </div>
     <button onclick="goToTop()" id="goToTopBtn" title="Go to top">^</button>
     <script src="script.js"></script>
+    <script src="Packages/lightbox-plus-jquery.js"></script>
 </body>
 </html>

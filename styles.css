@@ -35,6 +35,15 @@
     text-align: center;
 }
 
+.game-dev-container {
+  background-image: url('Assets/GAME-PROJECT-BACKGROUND.png');
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+
 .grid-content{
     margin: 48px auto;
     max-width: 60%;
@@ -121,6 +130,11 @@
 
   .tag.cuda{
     background-color: rgb(118, 185, 0);
+    color: white;
+  }
+
+  .tag.lua{
+    background-color: rgb(0, 0, 255);
     color: white;
   }
 
