@@ -30,18 +30,150 @@
     <div class="bar"></div>
   </div>
 
-  <div class="experience-container">
-    <div class="display-5 text-center">Professional Experience</div>
-    <div class="container mt-4">
-      <div class="card mb-3">
-        <div class="card-body">
-          <h5 class="card-title">BAE Systems</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Graduate Systems Engineer
-          </h6>
-          <p class="card-text"></p>
+<section class="experience-container" aria-labelledby="experience-heading">
+  <div class="experience-heading">
+
+    <h2 id="experience-heading" class="display-5">
+      Professional Experience
+    </h2>
+
+    <p class="experience-introduction">
+      Graduate engineering experience spanning greenfield software development
+      and model-based systems engineering within BAE Systems.
+    </p>
+  </div>
+
+  <div class="experience-timeline">
+
+    <!-- Graduate Software Engineer -->
+    <article class="experience-card">
+      <div class="experience-card-header">
+        <div>
+          <div class="experience-company">
+            <i class="fa-solid fa-building" aria-hidden="true"></i>
+            BAE Systems
+          </div>
+
+          <h3 class="experience-role">
+            Graduate Software Engineer
+            <span class="experience-programme">FCAS</span>
+          </h3>
         </div>
+
+        <span class="experience-status">Current role</span>
       </div>
-    </div>
+
+      <div class="experience-meta">
+        <span>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          London, England
+        </span>
+
+        <span>
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          August 2025 – Present
+        </span>
+      </div>
+
+      <ul class="experience-points">
+        <li>
+          Develop, deploy and maintain Java and Spring Boot services within a
+          security-focused defence software environment on a greenfield project.
+        </li>
+
+        <li>
+          Work with GitLab repositories, CI/CD pipelines and Nexus repositories
+          to manage source code, builds, dependencies and software artefacts.
+        </li>
+
+        <li>
+          Contribute to code reviews, testing, debugging, technical documentation
+          and Agile engineering activities.
+        </li>
+
+        <li>
+          Helped demonstrate the project to managing-director-level staff across
+          BAE Systems Air and Digital Intelligence.
+        </li>
+      </ul>
+
+      <div class="experience-technologies" aria-label="Technologies used">
+        <span>Java</span>
+        <span>Spring Boot</span>
+        <span>GitLab</span>
+        <span>Nexus</span>
+        <span>Git</span>
+        <span>CI/CD</span>
+        <span>Agile</span>
+      </div>
+    </article>
+
+    <!-- Graduate Systems Engineer -->
+    <article class="experience-card">
+      <div class="experience-card-header">
+        <div>
+          <div class="experience-company">
+            <i class="fa-solid fa-building" aria-hidden="true"></i>
+            BAE Systems
+          </div>
+
+          <h3 class="experience-role">
+            Graduate Systems Engineer
+            <span class="experience-programme">GCAP</span>
+          </h3>
+        </div>
+
+        <span class="experience-status experience-status-previous">
+          Previous role
+        </span>
+      </div>
+
+      <div class="experience-meta">
+        <span>
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          Brough, England
+        </span>
+
+        <span>
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          January 2025 – August 2025
+        </span>
+      </div>
+
+      <ul class="experience-points">
+        <li>
+          Took on responsibilities above my graduate level during systems
+          engineering activities for the team’s area of the Global Combat Air
+          Programme.
+        </li>
+
+        <li>
+          Helped communicate and translate stakeholder needs into structured
+          engineering requirements.
+        </li>
+
+        <li>
+          Applied model-based systems engineering practices to document system
+          relationships, behaviours and interfaces.
+        </li>
+
+        <li>
+          Collaborated with multidisciplinary engineering teams and contributed
+          to technical reviews, documentation and issue resolution.
+        </li>
+      </ul>
+
+      <div class="experience-technologies" aria-label="Technologies and methods used">
+        <span>MBSE</span>
+        <span>Systems Engineering</span>
+        <span>Requirements Engineering</span>
+        <span>Agile</span>
+      </div>
+    </article>
+
+      </div>
+    </section>
+
     <div class="bar"></div>
 
     <div class="projects-container">
@@ -198,7 +330,8 @@
           <!-- BLACK TIDE: FORSAKEN -->
           <div class="col">
             <div class="card">
-              <a href="Assets/BTF-ASSETS/Main-Menu-Church.jpg"
+              <a class="game-project-image"
+                href="Assets/BTF-ASSETS/Main-Menu-Church.jpg"
                 data-lightbox="black-tide-gallery"
                 data-title="Black Tide: Forsaken - Main Menu Church">
                 <img src="Assets/BTF-ASSETS/Main-Menu-Church.jpg"
@@ -206,7 +339,6 @@
                     alt="Black Tide: Forsaken main menu church scene." />
               </a>
 
-              <!-- Additional hidden Black Tide gallery images -->
               <a href="Assets/BTF-ASSETS/Torch.jpg"
                 data-lightbox="black-tide-gallery"
                 data-title="Black Tide: Forsaken - Torch"
@@ -268,6 +400,8 @@
                 style="display:none;"></a>
 
               <div class="card-body">
+                <h3 class="game-project-title">Black Tide: Forsaken</h3>
+
                 <div class="tag-container">
                   <span class="tag csharp"><i class="fas fa-code"> C#</i></span>
                   <span class="tag unity"><i class="fas fa-gamepad"> Unity</i></span>
@@ -289,7 +423,8 @@
           <!-- ENTER THE DUNGEON -->
           <div class="col">
             <div class="card">
-              <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png"
+              <a class="game-project-image"
+                href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png"
                 data-lightbox="enter-dungeon-gallery"
                 data-title="Enter the Dungeon">
                 <img
@@ -324,6 +459,8 @@
               </a>
 
               <div class="card-body">
+                <h3 class="game-project-title">Enter the Dungeon</h3>
+                
                 <div class="tag-container">
                   <span class="tag lua">
                     <i class="fas fa-code"> Lua</i>
@@ -363,7 +500,6 @@
         </a>
       </div>
     </div>
-    <button onclick="goToTop()" id="goToTopBtn" title="Go to top">^</button>
     <script src="script.js"></script>
     <script src="Packages/lightbox-plus-jquery.js"></script>
 </body>
