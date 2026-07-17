@@ -193,3 +193,17 @@
 .github-container{
   text-align: center;
 }
+
+.game-dev-container .display-5 {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.gallery-instruction {
+  font-family: "Fredoka", sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: rgb(255, 0, 234);
+  letter-spacing: 0.5px;
+}
