@@ -1,598 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Matthew Lockhart</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.2/font/bootstrap-icons.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Matthew Lockhart — software engineer, independent game developer and Director at Dot2. LTD. Explore my experience, software projects and games.">
+  <meta name="theme-color" content="#f7f8f3">
+  <title>Matthew Lockhart | Software Engineer & Game Developer</title>
+  <link rel="icon" type="image/svg+xml" href="Assets/favicon.svg">
   <link rel="stylesheet" href="styles.css">
-  <link href="Packages/lightbox.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="Assets/ML.png">
+  <script src="script.js" defer></script>
 </head>
-
-<body>
-  <nav class="navbar navbar-expand-lg bg-dark">
-    <div class="container-md">
-      <p class="navbar-brand">ML</p>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-layout">
+      <a class="wordmark" href="#top" aria-label="Matthew Lockhart, back to top">ML</a>
+      <nav aria-label="Main navigation">
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#projects">Projects</a>
+        <a href="#games">Games</a>
+        <a href="#dot2">Dot2.</a>
+        <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+      </nav>
     </div>
-  </nav>
-  <div class="navbar-bottom-band"></div>
-
-  <div class="intro-container">
-    <div class="display-1">Hi, I'm Matthew Lockhart</div>
-    <div class="display-4">Graduate Software Engineer at BAE Systems</div>
-    <div class="bar"></div>
-  </div>
-
-<section class="experience-container" aria-labelledby="experience-heading">
-  <div class="experience-heading">
-
-    <h2 id="experience-heading" class="display-5">
-      Professional Experience
-    </h2>
-
-    <p class="experience-introduction">
-      Graduate engineering experience spanning greenfield software development
-      and various systems engineering activities within BAE Systems Air/Digital Intelligence.
-    </p>
-  </div>
-
-  <div class="experience-timeline">
-
-    <!-- Graduate Software Engineer -->
-    <article class="experience-card">
-      <div class="experience-card-header">
-        <div>
-          <div class="experience-company">
-            <i class="fa-solid fa-building" aria-hidden="true"></i>
-            BAE Systems
-          </div>
-
-          <h3 class="experience-role">
-            Graduate Software Engineer
-            <span class="experience-programme">FCAS</span>
-          </h3>
-        </div>
-
-        <span class="experience-status">Current role</span>
+  </header>
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-heading">
+      <div class="hero-copy">
+        <p class="eyebrow">SOFTWARE ENGINEER &amp; GAME DEVELOPER</p>
+        <h1 id="hero-heading">Matthew<br>Lockhart</h1>
+        <div class="hero-actions"><a class="button button-primary" href="#projects">View projects <span aria-hidden="true">↘</span></a><a class="text-link" href="#experience">View experience <span aria-hidden="true">↓</span></a></div>
       </div>
+      <aside class="hero-aside" aria-label="At a glance">
+        <dl class="at-a-glance">
+          <div><dt>Currently</dt><dd>Software Engineer / Architect<span>BAE Systems Air</span></dd></div>
+          <div><dt>Alongside</dt><dd>Game Developer at ZeYDi Games<span class="additional-role">Director at Dot2. LTD</span></dd></div>
+          <div><dt>Based in</dt><dd>Yorkshire, England<span>Nationally and Internationally Mobile</span></dd></div>
+        </dl>
+      </aside>
+    </section>
 
-      <div class="experience-meta">
-        <span>
-          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-          London, England
-        </span>
-
-        <span>
-          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-          August 2025 – Present
-        </span>
-      </div>
-
-      <ul class="experience-points">
-        <li>
-          Develop, deploy and maintain Java and Spring Boot services within a
-          security-centric defence software environment on a greenfield project handling large amounts of data and complicated integration problems spanning multiple platforms.
-        </li>
-
-        <li>
-          Work with GitLab repositories, CI/CD pipelines and Nexus repositories
-          to manage source code, builds, dependencies and software artifacts to allow for rapid deployment and integration of systems within a myriad of different theatres/operating environments.
-        </li>
-
-        <li>
-          Discussed, designed and implemented best practice for; code reviews, testing, debugging, technical documentation
-          and Agile engineering activities.
-        </li>
-
-        <li>
-          Demonstrated the project to managing-director-level staff across
-          BAE Systems Air and Digital Intelligence.
-        </li>
-      </ul>
-
-      <div class="experience-technologies" aria-label="Technologies used">
-        <span>Java</span>
-        <span>Spring Boot</span>
-        <span>GitLab</span>
-        <span>Nexus</span>
-        <span>Git</span>
-        <span>CI/CD</span>
-        <span>Agile</span>
-      </div>
-    </article>
-
-    <!-- Graduate Systems Engineer -->
-    <article class="experience-card">
-      <div class="experience-card-header">
-        <div>
-          <div class="experience-company">
-            <i class="fa-solid fa-building" aria-hidden="true"></i>
-            BAE Systems
-          </div>
-
-          <h3 class="experience-role">
-            Graduate Systems Engineer
-            <span class="experience-programme">GCAP</span>
-          </h3>
-        </div>
-
-        <span class="experience-status experience-status-previous">
-          Previous role
-        </span>
-      </div>
-
-      <div class="experience-meta">
-        <span>
-          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-          Brough, England
-        </span>
-
-        <span>
-          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-          January 2025 – August 2025
-        </span>
-      </div>
-
-      <ul class="experience-points">
-        <li>
-          Took on responsibilities above my graduate level during systems
-          engineering activities for the team’s area of the Global Combat Air
-          Programme.
-        </li>
-
-        <li>
-          Communicated and translated stakeholder needs into structured
-          engineering requirements.
-        </li>
-
-        <li>
-          Applied model-based systems engineering practices to document system
-          relationships, behaviours and interfaces.
-        </li>
-
-        <li>
-          Trained and mentored newer graduate engineers in systems engineering practices and tools.
-        </li>
-
-        <li>
-          Collaborated with multidisciplinary engineering teams and contributed
-          to technical reviews, documentation and issue resolution.
-        </li>
-      </ul>
-
-      <div class="experience-technologies" aria-label="Technologies and methods used">
-        <span>MBSE</span>
-        <span>Systems Engineering</span>
-        <span>Requirements Engineering</span>
-        <span>Agile</span>
-      </div>
-    </article>
-
+    <section class="section container" id="experience" aria-labelledby="experience-heading">
+      <div class="section-heading"><div><h2 id="experience-heading">Professional experience</h2></div><p>Software and systems engineering across BAE Systems Air and Digital Intelligence.</p></div>
+      <div class="experience-list">
+        <article class="experience-row">
+          <div class="experience-date"><span class="current-label"><span class="status-dot" aria-hidden="true"></span> Current role</span><p><time datetime="2026-08">Aug 2026</time> — Present</p><span>Brough, England</span></div>
+          <div class="experience-content"><p class="company">BAE Systems Air</p><h3>Software Engineer / Architect</h3><ul class="experience-points"><li>Develop Ada software and integrate engineering toolsets with in-house applications for a proof-of-concept programme supporting next-generation combat aircraft.</li><li>Develop Java tooling for a cross-company integrated tool supporting dynamic next-generation combat-aircraft software capabilities.</li></ul><ul class="tags" aria-label="Technologies and skills"><li>Ada</li><li>Java</li><li>GitLab</li><li>Linux</li></ul></div>
+        </article>
+        <article class="experience-row">
+          <div class="experience-date"><p><time datetime="2025-08">Aug 2025</time> — <time datetime="2026-08">Aug 2026</time></p><span>London, England</span></div>
+          <div class="experience-content"><p class="company">BAE Systems Digital Intelligence</p><h3>Graduate Software Engineer</h3><ul class="experience-points"><li>Developed Java and Spring Boot messaging and data services in a six-engineer team, exploring data exchange between distributed nodes for a defence proof of concept.</li><li>Delivered a substantial five-day backend redesign ahead of stakeholder demonstrations, updating data schemas, API endpoints, controllers, services and data-access layers for internal and external workflows.</li><li>Co-designed service interactions and data schemas as one of two dedicated backend developers, adapting the architecture to changing requirements and prioritising demonstrable functionality.</li><li>Co-delivered live demonstrations to Managing Director-level BAE Systems leadership and UK MOD representatives, operating the prototype across separate machines and answering technical questions.</li><li>Proactively identified and resolved defects and code inefficiencies, progressing fixes through Jira and established review processes.</li></ul><ul class="tags" aria-label="Technologies and skills"><li>Java</li><li>Spring Boot</li><li>RabbitMQ</li><li>GitLab CI/CD</li><li>Nexus</li><li>Jira</li></ul></div>
+        </article>
+        <article class="experience-row">
+          <div class="experience-date"><p><time datetime="2025-01">Jan 2025</time> — <time datetime="2025-08">Aug 2025</time></p><span>Brough, England</span></div>
+          <div class="experience-content"><p class="company">BAE Systems Air</p><h3>Graduate Systems Engineer</h3><ul class="experience-points"><li>Translated stakeholder needs into structured engineering requirements and system models, supporting multidisciplinary reviews and systems engineering activities.</li><li>Guided and taught engineering colleagues in Cameo modelling, including UML/SysML best practices, sequence diagrams and use-case diagrams.</li></ul><ul class="tags" aria-label="Technologies and skills"><li>Cameo</li><li>MBSE</li><li>UML / SysML</li><li>Requirements engineering</li></ul></div>
+        </article>
       </div>
     </section>
 
-    <div class="bar"></div>
 
-    <div class="projects-container">
-      <div class="display-5">Projects</div>
-      <div class="" style="color:gray">GitHub Repo's available upon request</div>
-      <div class="grid-content">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col">
-            <div class="card">
-              <img src="Assets/IDENTIFY.png" class="card-img-top"
-                alt="Purple background with the text Identify in the foreground" />
-              <div class="card-body">
-                <div class="tag-container">
-                  <span class="tag python"><i class="fab fa-python"> Python</i></span>
-                  <span class="tag sql"><i class="fas fa-database"> SQL</i></span>
-                  <span class="tag flask"><i class="fas fa-flask"> Flask</i></span>
-                  <span class="tag jinja"><i class="fas fa-code"> Jinja</i></span>
-                  <span class="tag pytorch"><i class="fas fa-code"> NLP</i></span>
-                  <span class="tag scraping"><i class="fas fa-code"> Web-Scraper</i></span>
-                </div>
-                <p class="card-text">
-                  A project based upon the goal: Identifying illegal wildlife trade through Twitter using Data Scraping
-                  and Machine Learning. The project is deployed to a website built using
-                  Flask and Jinja 2, incorporating a user account system through an SQL Database and hosting a Machine
-                  Learning Model built using Natural Language Processing.
-                </p>
+    <section class="section container education-section" id="education" aria-labelledby="education-heading">
+      <div class="section-heading"><div><h2 id="education-heading">Education</h2></div></div>
+      <div class="experience-list education-list">
+        <article class="experience-row education-entry">
+          <div class="experience-date"><p><time datetime="2021-09">Sep 2021</time> — <time datetime="2024-07">Jul 2024</time></p><span>Hull, England</span></div>
+          <div class="experience-content">
+            <p class="company">University of Hull</p>
+            <h3>BSc (Hons) Computer Science for Games Development</h3>
+            <p class="qualification-result">First-Class Honours</p>
+            <dl class="year-results" aria-label="Calculated credit-weighted module averages"><div><dt>Year 1</dt><dd>75.83%</dd></div><div><dt>Year 2</dt><dd>77.17%</dd></div><div><dt>Year 3</dt><dd>77.50%</dd></div><div class="year-results-overall"><dt>Across all years</dt><dd>76.83%</dd></div></dl>
+            <p class="year-results-note">Calculated credit-weighted module averages; each year contributes 120 credits.</p>
+            <details class="module-details">
+              <summary><span>Modules &amp; grades</span><span class="module-summary-count">15 graded modules</span></summary>
+              <div class="module-years">
+                <section class="module-year" aria-labelledby="module-year-1">
+                  <h4 id="module-year-1">Year 1 <span>Certificate stage</span></h4>
+                  <table class="module-table">
+                    <caption class="sr-only">Certificate stage modules and percentage marks</caption>
+                    <thead><tr><th scope="col">Module</th><th scope="col">Mark</th></tr></thead>
+                    <tbody>
+                    <tr><th scope="row">Programming Portfolio</th><td><span class="module-mark">70%</span></td></tr>
+                    <tr><th scope="row">Architectures, Operating Systems and the Cloud</th><td><span class="module-mark">80%</span></td></tr>
+                    <tr><th scope="row">Computational Thinking</th><td><span class="module-mark">83%</span></td></tr>
+                    <tr><th scope="row">Algorithms and Data Structures</th><td><span class="module-mark">76%</span></td></tr>
+                    <tr><th scope="row">Professional Development</th><td><span class="module-mark">76%</span></td></tr>
+                    <tr><th scope="row">Extra-Curricular Activities</th><td><span class="module-ungraded">Not graded</span></td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><th scope="row">Credit-weighted average</th><td class="year-weighted-mark">75.83%</td></tr>
+                      <tr><th scope="row">Simple module average</th><td class="year-simple-mark">77.00%</td></tr>
+                    </tfoot>
+                  </table>
+                </section>
+                <section class="module-year" aria-labelledby="module-year-2">
+                  <h4 id="module-year-2">Year 2 <span>Diploma stage</span></h4>
+                  <table class="module-table">
+                    <caption class="sr-only">Diploma stage modules and percentage marks</caption>
+                    <thead><tr><th scope="col">Module</th><th scope="col">Mark</th></tr></thead>
+                    <tbody>
+                    <tr><th scope="row">Advanced Programming</th><td><span class="module-mark">72%</span></td></tr>
+                    <tr><th scope="row">Graphics Programming and Simulation 1</th><td><span class="module-mark">76%</span></td></tr>
+                    <tr><th scope="row">Artificial Intelligence for Games</th><td><span class="module-mark">64%</span></td></tr>
+                    <tr><th scope="row">Mixed Reality Development</th><td><span class="module-mark">83%</span></td></tr>
+                    <tr><th scope="row">Design Develop Deploy</th><td><span class="module-mark">84%</span></td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><th scope="row">Credit-weighted average</th><td class="year-weighted-mark">77.17%</td></tr>
+                      <tr><th scope="row">Simple module average</th><td class="year-simple-mark">75.80%</td></tr>
+                    </tfoot>
+                  </table>
+                </section>
+                <section class="module-year" aria-labelledby="module-year-3">
+                  <h4 id="module-year-3">Year 3 <span>Honours stage</span></h4>
+                  <table class="module-table">
+                    <caption class="sr-only">Honours stage modules and percentage marks</caption>
+                    <thead><tr><th scope="col">Module</th><th scope="col">Mark</th></tr></thead>
+                    <tbody>
+                    <tr><th scope="row">Parallel and Concurrent Programming</th><td><span class="module-mark">87%</span></td></tr>
+                    <tr><th scope="row">Distributed Systems Programming</th><td><span class="module-mark">83%</span></td></tr>
+                    <tr><th scope="row">Honours Stage Project</th><td><span class="module-mark">72%</span></td></tr>
+                    <tr><th scope="row">Games Architecture</th><td><span class="module-mark">83%</span></td></tr>
+                    <tr><th scope="row">Graphics Programming and Simulation 2</th><td><span class="module-mark">68%</span></td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><th scope="row">Credit-weighted average</th><td class="year-weighted-mark">77.50%</td></tr>
+                      <tr><th scope="row">Simple module average</th><td class="year-simple-mark">78.60%</td></tr>
+                    </tfoot>
+                  </table>
+                </section>
               </div>
-            </div>
+            </details>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="Assets/MEAT-MAN.png" class="card-img-top"
-                alt="A top-down overview of the game showcasing the map, ai and entities." />
-              <div class="card-body">
-                <div class="tag-container">
-                  <span class="tag csharp"><i class="fas fa-code"> C#</i></span>
-                  <span class="tag net"><i class="fas fa-code"> .NET</i></span>
-                  <span class="tag opengl"><i class="fas fa-code"> OpenGL</i></span>
-                  <span class="tag opentk"><i class="fas fa-code"> OpenTK</i></span>
-                  <span class="tag opengl"><i class="fas fa-code"> GLSL</i></span>
-                </div>
-                <p class="card-text">
-                  This project has two main sections, the game engine is built using OpenGL and utilises an entity
-                  component system to promote modularity and reusability. The engine boasts a variety of
-                  systems, components and managers to be applicable to multiple game types. 'Meat-Man' was built to
-                  prove the efficacy of the engine and is a Pac-Man clone, reimagined.
-                </p>
-              </div>
-            </div>
+        </article>
+        <article class="experience-row education-entry">
+          <div class="experience-date"><p><time datetime="2018-09">Sep 2018</time> — <time datetime="2020-07">Jul 2020</time></p><span>Doncaster, England</span></div>
+          <div class="experience-content">
+            <p class="company">Hill House School</p>
+            <h3>A levels &amp; EPQ</h3>
+            <ul class="education-subjects" aria-label="A-level subjects and grades"><li aria-label="Business: grade A">Business <strong class="qualification-grade">A</strong></li><li aria-label="Economics: grade B">Economics <strong class="qualification-grade">B</strong></li><li aria-label="Classical Civilisation: grade B">Classical Civilisation <strong class="qualification-grade">B</strong></li></ul>
+            <p class="education-detail" aria-label="Extended Project Qualification, EPQ: grade C">Extended Project Qualification (EPQ) <strong class="qualification-grade">C</strong></p>
           </div>
-          <div class="col">
-            <div class="card">
-              <img src="Assets/Cloth-Sim.png" class="card-img-top" alt="A soft body physics simulation." />
-              <div class="card-body">
-                <div class="tag-container">
-                  <span class="tag rust"><img src="Assets/SVG-Icons/rust-icon.svg" alt="Rust" width="20" height="20">
-                    Rust</span>
-                  <span class="tag cpp"><i class="fas fa-code"> C++</i></span>
-                  <span class="tag cuda"><i class="fas fa-code"> CUDA</i></span>
-                  <span class="tag opengl"><i class="fas fa-code"> OpenGL</i></span>
-                </div>
-                <p class="card-text">
-                  This Cloth Physics Simulation was created in both Rust and CUDA hosted from C++ to demonstrate the
-                  ability of implementing a multi-threaded project on both the CPU and GPU.
-                  The simulation is esentially a 2D array of points, each point having information relevant for the
-                  simulation physics such as: spring coefficient, dampening coefficient, mass, velocity, and neighbor
-                  nodes.
-                  The distance between each point is rendered as a line.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="Assets/SudokuSolver.png" class="card-img-top"
-                alt="Black background with an image of a sudoku puzzle in the middle with the text 'Sudoku Solver' in the foreground" />
-              <div class="card-body">
-                <div class="tag-container">
-                  <span class="tag cpp"><i class="fas fa-code"> C++</i></span>
-                </div>
-                <p class="card-text">
-                  A project using C++ that solves valid sudoku problems programatically. This project solves 9x9
-                  sudoku's in around 20 Microseconds. The program ingests a CSV with
-                  a valid Sudoku Puzzle and solves it whilst measuring metrics of the program such as candidates, solved
-                  cells and amount of passes as a means of measuring the efficiency and areas
-                  of improvement regarding the solving algorithm.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="Assets/KEYWORD-IDENTIFIER.png" class="card-img-top"
-                alt="Comma seperated value file in the background with arbitrary data, 'Keyword Identifier' in the foreground" />
-              <div class="card-body">
-                <div class="tag-container">
-                  <span class="tag csharp"><i class="fas fa-code"> C#</i></span>
-                  <span class="tag net"><i class="fas fa-code"> .NET</i></span>
-                </div>
-                <p class="card-text">
-                  A small, personal project to be used for my E-Commerce company. My Company has a variety of branded
-                  products and concurrently runs advertising campaigns using Amazon's PPC System on numerous listings.
-                  To identify poorly performing keywords, I developed a program that takes in a CSV of keywords and
-                  their data then using criteria inputted by the user, analyses keywords that are poorly performing.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="Assets/CTF.png" class="card-img-top"
-                alt="A Unity game in the background showcasing local multiplayer, Capture the flag text in the foreground" />
-              <div class="card-body">
-                <div class="tag-container">
-                  <span class="tag csharp"><i class="fas fa-code"> C#</i></span>
-                  <span class="tag unity"><i class="fas fa-gamepad"> Unity</i></span>
-                </div>
-                <p class="card-text">
-                  A group project developed using Unity and managed using Agile methodology. I was responsible for all
-                  the game programming and created a local multiplayer 2D Capture the Flag game with a map based upon
-                  the University
-                  of Hull campus. A variety of features take place within the game such as the scoring, damaging,
-                  dynamic obstacles such as rotating cubes and win conditions with different menu screens.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <img src="Assets/Leet-Code.png" class="card-img-top" alt="A simple logo for a leetcode program." />
-              <div class="card-body">
-                <div class="tag-container">
-                  <span class="tag csharp"><i class="fas fa-code"> C#</i></span>
-                  <span class="tag net"><i class="fas fa-gamepad"> .NET</i></span>
-                </div>
-                <p class="card-text">
-                  A project I've been working on as a way of showing my LeetCode solutions in C# categorised into: Easy,
-                  Medium and Hard any LeetCode I have done is uploaded on this repo, see my GitHub for more.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <div class="game-dev-container">
-      <div class="display-5">Game Dev Projects</div>
-      <div class="gallery-instruction">Click Images for Gallery</div>
-
-      <div class="grid-content">
-        <div class="row row-cols-1 row-cols-md-2 g-4">
-
-          <!-- BLACK TIDE: FORSAKEN -->
-          <div class="col">
-            <div class="card">
-              <a class="game-project-image"
-                href="Assets/BTF-ASSETS/Main-Menu-Church.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Main Menu Church">
-                <img src="Assets/BTF-ASSETS/Main-Menu-Church.jpg"
-                    class="card-img-top"
-                    alt="Black Tide: Forsaken main menu church scene." />
-              </a>
-
-              <a href="Assets/BTF-ASSETS/Torch.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Torch"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Church-Night.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Church at Night"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Courtyard-Day.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Courtyard Day"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Courtyard-UI.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Courtyard UI"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Cuthberts-Isle.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Cuthbert's Isle"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Dialogue.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Dialogue"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Eating-Room-Night.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Eating Room at Night"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Environment.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Environment"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Inspect.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Inspect"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Main-Menu-Tree.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Main Menu Tree"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Moon.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Moon"
-                style="display:none;"></a>
-
-              <a href="Assets/BTF-ASSETS/Pickup.jpg"
-                data-lightbox="black-tide-gallery"
-                data-title="Black Tide: Forsaken - Pickup"
-                style="display:none;"></a>
-
-              <div class="card-body">
-                <h3 class="game-project-title">Black Tide: Forsaken</h3>
-
-                <div class="tag-container">
-                  <span class="tag csharp"><i class="fas fa-code"> C#</i></span>
-                  <span class="tag unity"><i class="fas fa-gamepad"> Unity</i></span>
-                </div>
-                <p class="card-text">
-                  Developing an open-world action RPG as part of a two-person team, taking responsibility for gameplay programming,
-                  systems architecture and level design. Engineered modular systems for player movement, interaction, inventories, item
-                  containers, quests, conditions and effects, environmental events, UI, audio and world simulation. Applied component-based,
-                  interface-driven and data-oriented design principles so that new items, quests, interactions and narrative content can be
-                  added through reusable configurations rather than bespoke code. Designed and built a historically and geographically open
-                  world containing settlements, explorable interiors, terrain, vegetation, dynamic lighting, weather and tidal environments.
-                  Profiled and optimised the game using occlusion culling, level-of-detail systems, instancing and structured content workflows
-                  to maintain performance while supporting continued expansion.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- GOLD RUSH -->
-          <div class="col">
-            <div class="card">
-
-              <!-- Main visible gallery image -->
-              <a class="game-project-image"
-                href="Assets/Gold-Rush-ASSETS/Desert.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Desert Settlement">
-                <img
-                  src="Assets/Gold-Rush-ASSETS/Desert.jpg"
-                  class="card-img-top"
-                  alt="An undeveloped desert environment in the Gold Rush mining game."
-                />
-              </a>
-
-              <!-- Additional hidden gallery images -->
-              <a href="Assets/Gold-Rush-ASSETS/Sunrise.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Sunrise"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/Gold-Rush-ASSETS/Shack.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Starting Shack"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/Gold-Rush-ASSETS/Trading-Post.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Trading Post"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/Gold-Rush-ASSETS/Trading-Post-2.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Trading Post Interior"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/Gold-Rush-ASSETS/Train-Station-Outside.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Train Station"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/Gold-Rush-ASSETS/Mountain.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Mountain Environment"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/Gold-Rush-ASSETS/Moonrise.jpg"
-                data-lightbox="gold-rush-gallery"
-                data-title="Gold Rush - Moonrise"
-                style="display: none;">
-              </a>
-
-              <div class="card-body">
-                <h3 class="game-project-title">Gold Rush</h3>
-
-                <div class="tag-container">
-                  <span class="tag csharp">
-                    <i class="fas fa-code"> C#</i>
-                  </span>
-
-                  <span class="tag unity">
-                    <i class="fas fa-gamepad"> Unity</i>
-                  </span>
-                </div>
-
-                <p class="card-text">
-                  An early-development single-player mining and town-building game set
-                  during the American Gold Rush. The player begins alone in an undeveloped
-                  desert settlement, mining and selling resources before reinvesting the
-                  profits into new buildings, equipment, infrastructure and workers.
-                  Progression is centred around growing a small mining operation into a
-                  functioning and increasingly automated mining town. The project is being
-                  developed in Unity with a focus on gameplay systems, economy and
-                  progression design, environmental world-building and settlement expansion.
-                </p>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- ENTER THE DUNGEON -->
-          <div class="col">
-            <div class="card">
-              <a class="game-project-image"
-                href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png"
-                data-lightbox="enter-dungeon-gallery"
-                data-title="Enter the Dungeon">
-                <img
-                  src="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png"
-                  class="card-img-top"
-                  alt="An image of the Enter the Dungeon map."
-                />
-              </a>
-
-              <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-2.png"
-                data-lightbox="enter-dungeon-gallery"
-                data-title="Enter the Dungeon - Image 2"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-3.png"
-                data-lightbox="enter-dungeon-gallery"
-                data-title="Enter the Dungeon - Image 3"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-4.png"
-                data-lightbox="enter-dungeon-gallery"
-                data-title="Enter the Dungeon - Image 4"
-                style="display: none;">
-              </a>
-
-              <a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-5.png"
-                data-lightbox="enter-dungeon-gallery"
-                data-title="Enter the Dungeon - Image 5"
-                style="display: none;">
-              </a>
-
-              <div class="card-body">
-                <h3 class="game-project-title">Enter the Dungeon</h3>
-                
-                <div class="tag-container">
-                  <span class="tag lua">
-                    <i class="fas fa-code"> Lua</i>
-                  </span>
-                  <span class="tag unity"><i class="fas fa-gamepad"> Roblox</i></span>
-                </div>
-
-                <p class="card-text">
-                  A project focused on creating an engaging multiplayer obstacle
-                  course game using Lua scripting for game logic, including a variety
-                  of obstacles, persistent player data, player controllers and more.
-                  The project uses high-quality 3D models and carefully considered
-                  world design to deliver a good-looking game within the low-poly
-                  art style.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="section container courses-section" id="courses" aria-labelledby="courses-heading">
+      <div class="section-heading"><div><h2 id="courses-heading">Courses &amp; qualifications</h2></div></div>
+      <div class="courses-list">
+        <!-- Add course titles, providers and completion dates once supplied. -->
+        <p class="courses-empty">Course details to be added.</p>
       </div>
-    </div>
-    <div class="links-container">
+    </section>
 
-      <div class="display-5">My Links</div>
-      <div class="links-container-content">
-        <a id="linkedin-btn" class="btn btn-lg btn-custom" style="background: #0077b5; color: white"
-          href="https://linkedin.com/in/mglockhart" target="_blank">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a id="github-btn" class="btn btn-lg btn-custom" style="background: #f4f4f4; border: #333 solid 1px"
-          href="https://github.com/sjglm" target="_blank">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a id="cv-btn" class="btn btn-lg btn-info" style="background: #630fff; border: none; color: white"
-          href="Assets/Matthew-Lockhart-CV-JUL26.pdf" target="_blank">
-          <i class="fas fa-id-card"></i> Open CV
-        </a>
+    <section class="section container" id="projects" aria-labelledby="projects-heading">
+      <div class="section-heading"><div><h2 id="projects-heading">Software projects</h2></div><p>Websites, visualisation, graphics and practical tools. Repository access is available on request.</p></div>
+      <div class="project-grid"><article class="project-card"><div class="project-media"><img src="Assets/IDENTIFY.png" alt="Identify wildlife-trade detection project artwork." width="800" height="450" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-meta"><p class="project-type">Machine learning &amp; web</p><span class="university-tag">University project</span></div><h3>Identify</h3><p class="project-description">An NLP and logistic-regression application that flags potential illegal wildlife trade in social-media posts. Combines a data-collection pipeline, a trained text classifier and a Flask web interface with SQLite-backed user accounts and results presentation.</p><ul class="tags" aria-label="Technologies and skills"><li>Python</li><li>Flask</li><li>Scikit-Learn</li><li>SQLite</li><li>NLP</li></ul></div></article>
+<article class="project-card" id="dot2-website"><a class="project-media dot2-project-cover" href="https://dot2.co.uk/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Dot2. website (opens in a new tab)"><img class="dot2-project-logo" src="Assets/Dot2-Logo.svg" alt="Dot2. logo" width="4961" height="3508" loading="lazy" decoding="async"></a><div class="project-body"><p class="project-type">Brand &amp; commerce</p><h3>Dot2. Website</h3><p class="project-description">A responsive website for Dot2., bringing together the mousepad range, Amazon product links and company information. Includes a business-order page with product browsing and a quote form that prepares an email enquiry for the customer to review and send.</p><ul class="tags" aria-label="Technologies and skills"><li>HTML</li><li>CSS</li><li>JavaScript</li></ul><div class="project-links"><a class="project-link" href="https://dot2.co.uk/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div></article>
+<article class="project-card" id="order-globe-project"><div class="project-media"><img src="Assets/Order-Globe-Visualiser.png" alt="Illustration of a globe with purple and amber map pins." width="1672" height="941" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-type">Data visualisation</p><h3>Order Globe Visualiser</h3><p class="project-description">An internal sales visualisation tool for Dot2., using an interactive 3D globe to explore product distribution across markets. Supports spreadsheet imports, product filters and map navigation for business analysis.</p><ul class="tags" aria-label="Technologies and skills"><li>TypeScript</li><li>CesiumJS</li><li>Node.js</li><li>Excel / CSV</li></ul></div></article>
+<article class="project-card"><div class="project-media"><img src="Assets/MEAT-MAN.png" alt="Top-down Meat-Man gameplay showing the map and game entities." width="800" height="450" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-meta"><p class="project-type">Graphics &amp; game architecture</p><span class="university-tag">University project</span></div><h3>Meat-Man &amp; Game Engine</h3><p class="project-description">A custom OpenGL game engine built around an entity component system, with reusable systems, components and managers. Meat-Man, a reimagined Pac-Man clone, demonstrates the engine through a complete playable game.</p><ul class="tags" aria-label="Technologies and skills"><li>C#</li><li>.NET</li><li>OpenGL</li><li>OpenTK</li><li>GLSL</li></ul></div></article>
+<article class="project-card"><div class="project-media"><img src="Assets/Cloth-Sim.png" alt="A cloth simulation rendered as a connected mesh of points." width="800" height="450" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-meta"><p class="project-type">Parallel computing</p><span class="university-tag">University project</span></div><h3>Cloth Physics Simulation</h3><p class="project-description">Two implementations of a cloth simulation exploring parallel computation on the CPU and GPU: multithreaded Rust and CUDA hosted from C++. A grid of connected points models spring forces, damping, mass and velocity, with connections rendered as lines.</p><ul class="tags" aria-label="Technologies and skills"><li>Rust</li><li>C++</li><li>CUDA</li><li>OpenGL</li></ul></div></article>
+<article class="project-card"><div class="project-media"><img src="Assets/SudokuSolver.png" alt="Sudoku Solver project artwork with a puzzle on a dark background." width="800" height="450" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-meta"><p class="project-type">Algorithms &amp; optimisation</p><span class="university-tag">University project</span></div><h3>Sudoku Solver</h3><p class="project-description">A C++ solver for valid 9 × 9 Sudoku puzzles loaded from CSV. Tracks candidates, solved cells and algorithm passes to measure efficiency and guide improvements, with recorded solve times of around 20 microseconds on the original test setup.</p><ul class="tags" aria-label="Technologies and skills"><li>C++</li></ul></div></article>
+<article class="project-card"><div class="project-media"><img src="Assets/KEYWORD-IDENTIFIER.png" alt="Keyword Identifier artwork over a spreadsheet of advertising data." width="800" height="450" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-type">E-commerce tooling</p><h3>Keyword Identifier</h3><p class="project-description">An internal tool for analysing Amazon pay-per-click advertising. Imports keyword performance data from CSV and applies user-defined criteria to identify underperforming search terms across product campaigns.</p><ul class="tags" aria-label="Technologies and skills"><li>C#</li><li>.NET</li><li>CSV analysis</li></ul></div></article>
+<article class="project-card"><div class="project-media"><img src="Assets/CTF.png" alt="Local multiplayer Capture the Flag gameplay in Unity." width="800" height="450" loading="lazy" decoding="async"></div><div class="project-body"><div class="project-meta"><p class="project-type">Multiplayer game programming</p><span class="university-tag">University project</span></div><h3>Capture the Flag</h3><p class="project-description">A team project creating a local multiplayer 2D Capture the Flag game on a map inspired by the University of Hull campus. I handled all game programming, including scoring, damage, dynamic obstacles, win conditions and menu flows.</p><ul class="tags" aria-label="Technologies and skills"><li>C#</li><li>Unity</li><li>Agile</li></ul></div></article>
+<article class="project-card"><div class="project-media"><img src="Assets/Leet-Code.png" alt="LeetCode solutions project artwork." width="800" height="450" loading="lazy" decoding="async"></div><div class="project-body"><p class="project-type">Problem solving</p><h3>LeetCode Solutions</h3><p class="project-description">A growing collection of C# solutions organised by Easy, Medium and Hard difficulty. A place to practise algorithms, compare approaches and keep a clear record of solved problems.</p><ul class="tags" aria-label="Technologies and skills"><li>C#</li><li>.NET</li><li>Algorithms</li></ul></div></article></div>
+    </section>
+
+    <section class="games-section" id="games" aria-labelledby="games-heading">
+      <div class="container"><div class="section-heading"><div><h2 id="games-heading">Game development projects</h2></div></div><div class="project-grid game-grid"><article class="project-card"><a class="project-media gallery-cover steam-cover" href="Assets/SYTYCT-ASSETS/Steam-Header.jpg" data-gallery="so-you-think-gallery" data-caption="So You Think You Can Talk? — Steam promotional artwork" aria-label="Open So You Think You Can Talk? gallery, 6 images">
+  <img src="Assets/SYTYCT-ASSETS/Steam-Header.jpg" alt="So You Think You Can Talk? promotional artwork showing players around a candlelit tavern table." width="460" height="215" loading="lazy" decoding="async">
+  <span class="gallery-label"><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="m3 13 4-4 4 4 3-2 3 3"/><circle cx="13.5" cy="7" r="1"/></svg><span>View gallery</span><span class="gallery-count">6<span class="sr-only"> images</span></span></span>
+</a><a href="Assets/SYTYCT-ASSETS/Steam-Screenshot-01.jpg" data-gallery="so-you-think-gallery" data-caption="So You Think You Can Talk? — multiplayer guessing in the tavern" hidden></a><a href="Assets/SYTYCT-ASSETS/Steam-Screenshot-02.jpg" data-gallery="so-you-think-gallery" data-caption="So You Think You Can Talk? — lobby browser and match settings" hidden></a><a href="Assets/SYTYCT-ASSETS/Steam-Screenshot-03.jpg" data-gallery="so-you-think-gallery" data-caption="So You Think You Can Talk? — word selection" hidden></a><a href="Assets/SYTYCT-ASSETS/Steam-Screenshot-04.jpg" data-gallery="so-you-think-gallery" data-caption="So You Think You Can Talk? — players around the tavern table" hidden></a><a href="Assets/SYTYCT-ASSETS/Steam-Screenshot-05.jpg" data-gallery="so-you-think-gallery" data-caption="So You Think You Can Talk? — character customisation" hidden></a><div class="project-body"><p class="project-type">Social word-guessing party game</p><h3>So You Think You Can Talk?</h3><p class="project-availability">Coming soon on Steam</p><p class="project-description">A 2–8 player online word-guessing party game. Independently developed from concept to a playable pre-release Steam build in approximately six weeks. Designed the word selection, scoring and round structure, alongside authoritative multiplayer, Steam lobbies, peer-to-peer networking, host migration, reconnection and voice communication. Refined menus, feedback and game pacing through testing and repeated UI iteration.</p><ul class="tags" aria-label="Technologies and skills"><li>Unity</li><li>C#</li><li>Steamworks.NET</li><li>Netcode for GameObjects</li></ul><div class="project-links"><a class="steam-link" href="https://store.steampowered.com/app/5370920/So_You_Think_You_Can_Talk/" target="_blank" rel="noopener noreferrer">Wishlist on Steam <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div></div></article>
+<article class="project-card"><a class="project-media gallery-cover" href="Assets/BTF-ASSETS/Main-Menu-Church.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Main Menu Church" aria-label="Open Black Tide: Forsaken gallery, 13 images"><img src="Assets/BTF-ASSETS/Main-Menu-Church.jpg" alt="The church at the main menu of Black Tide: Forsaken." width="800" height="450" loading="lazy" decoding="async"><span class="gallery-label"><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="m3 13 4-4 4 4 3-2 3 3"/><circle cx="13.5" cy="7" r="1"/></svg><span>View gallery</span><span class="gallery-count">13<span class="sr-only"> images</span></span></span></a><a href="Assets/BTF-ASSETS/Torch.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Torch" hidden></a><a href="Assets/BTF-ASSETS/Church-Night.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Church at Night" hidden></a><a href="Assets/BTF-ASSETS/Courtyard-Day.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Courtyard Day" hidden></a><a href="Assets/BTF-ASSETS/Courtyard-UI.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Courtyard UI" hidden></a><a href="Assets/BTF-ASSETS/Cuthberts-Isle.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Cuthbert&#x27;s Isle" hidden></a><a href="Assets/BTF-ASSETS/Dialogue.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Dialogue" hidden></a><a href="Assets/BTF-ASSETS/Eating-Room-Night.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Eating Room at Night" hidden></a><a href="Assets/BTF-ASSETS/Environment.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Environment" hidden></a><a href="Assets/BTF-ASSETS/Inspect.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Inspect" hidden></a><a href="Assets/BTF-ASSETS/Main-Menu-Tree.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Main Menu Tree" hidden></a><a href="Assets/BTF-ASSETS/Moon.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Moon" hidden></a><a href="Assets/BTF-ASSETS/Pickup.jpg" data-gallery="black-tide-gallery" data-caption="Black Tide: Forsaken - Pickup" hidden></a><div class="project-body"><p class="project-type">Historical open-world action RPG</p><h3>Black Tide: Forsaken</h3><p class="project-availability project-development">In development</p><p class="project-description">Co-developing an open-world action RPG in a two-person team, leading gameplay programming, modular systems and level design. Reusable movement, interaction, inventory, quest and environmental systems support a world of settlements and interiors, with dynamic lighting, weather and tides. LOD, occlusion culling and GPU instancing balance environmental detail with runtime performance.</p><ul class="tags" aria-label="Technologies and skills"><li>Unity</li><li>C#</li><li>Systems architecture</li><li>Level design</li></ul></div></article>
+<article class="project-card"><div class="project-media project-placeholder placeholder-drone"><span class="placeholder-category">VR &amp; desktop survival</span><span class="placeholder-art" aria-hidden="true"></span><span class="placeholder-title" aria-hidden="true">Drone Defence</span><span class="placeholder-note">Project images coming soon</span></div><div class="project-body"><p class="project-type">VR &amp; desktop survival</p><h3>Drone Defence</h3><p class="project-availability project-development">In development</p><p class="project-description">A drone-survival game built around physical VR interactions, with a desktop play mode. Combines tracked weapon handling, two-handed aiming, manual reloading and body-mounted equipment with increasingly challenging drone behaviour. Campaign and endless systems bring together a run-based economy, upgrades and progression through a military-base environment.</p><ul class="tags" aria-label="Technologies and skills"><li>Unity</li><li>C#</li><li>OpenXR</li><li>Gameplay systems</li></ul></div></article>
+<article class="project-card" id="ossuary-project">
+  <div class="project-media project-placeholder placeholder-ossuary">
+    <span class="placeholder-category">First-person automation</span>
+    <span class="placeholder-art" aria-hidden="true"></span>
+    <span class="placeholder-title" aria-hidden="true">Ossuary</span>
+    <span class="placeholder-note">Project images coming soon</span>
+  </div>
+  <div class="project-body">
+    <p class="project-type">Incremental &amp; automation</p>
+    <h3>Ossuary</h3><p class="project-availability project-development">In development</p>
+    <p class="project-description">A first-person incremental and automation game inspired by Sedlec Ossuary. Excavate burial sites, recover and sort bones, and use prepared materials to build monuments. The prototype combines physical tool and basket interactions, finite resource management, worker recruitment and automated processing with a persistent campaign.</p>
+    <ul class="tags" aria-label="Technologies and skills"><li>Unity</li><li>C#</li><li>Gameplay systems</li><li>Automation</li></ul>
+  </div>
+</article>
+<article class="project-card"><div class="project-media project-placeholder placeholder-kings"><span class="placeholder-category">Digital board game</span><span class="placeholder-art" aria-hidden="true"></span><span class="placeholder-title" aria-hidden="true">King’s Game</span><span class="placeholder-note">Project images coming soon</span></div><div class="project-body"><p class="project-type">Digital board game</p><h3>King’s Game</h3><p class="project-availability project-development">In development</p><p class="project-description">A 1v1 digital adaptation of Copenhagen Hnefatafl. Development centres on a deterministic rules engine for legal moves, captures and victory conditions, alongside networking and backend foundations. The planned experience places a physical board in a 3D tavern, with casual Steam play and backend-authoritative ranked matches.</p><ul class="tags" aria-label="Technologies and skills"><li>Unity</li><li>C#</li><li>Hnefatafl</li><li>Multiplayer</li></ul></div></article>
+<article class="project-card"><a class="project-media gallery-cover" href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png" data-gallery="enter-dungeon-gallery" data-caption="Enter the Dungeon" aria-label="Open Enter the Dungeon gallery, 5 images"><img src="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC.png" alt="A colourful low-poly map from Enter the Dungeon." width="800" height="450" loading="lazy" decoding="async"><span class="gallery-label"><svg viewBox="0 0 20 20" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="m3 13 4-4 4 4 3-2 3 3"/><circle cx="13.5" cy="7" r="1"/></svg><span>View gallery</span><span class="gallery-count">5<span class="sr-only"> images</span></span></span></a><a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-2.png" data-gallery="enter-dungeon-gallery" data-caption="Enter the Dungeon - Image 2" hidden></a><a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-3.png" data-gallery="enter-dungeon-gallery" data-caption="Enter the Dungeon - Image 3" hidden></a><a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-4.png" data-gallery="enter-dungeon-gallery" data-caption="Enter the Dungeon - Image 4" hidden></a><a href="Assets/ENTER-THE-DUNGEON-ASSETS/ENTER-THE-DUNGEON-PROMO-PIC-5.png" data-gallery="enter-dungeon-gallery" data-caption="Enter the Dungeon - Image 5" hidden></a><div class="project-body"><p class="project-type">Multiplayer obstacle course</p><h3>Enter the Dungeon</h3><p class="project-availability project-deprecated">Deprecated</p><p class="project-description">A multiplayer obstacle-course game built in Roblox, with Lua scripting for obstacles, persistent player data and player controllers. Carefully arranged environments and detailed 3D models create a cohesive low-poly world.</p><ul class="tags" aria-label="Technologies and skills"><li>Lua</li><li>Roblox</li><li>Multiplayer</li></ul></div></article></div></div>
+    </section>
+
+
+    <section class="director-section" id="dot2" aria-labelledby="dot2-heading">
+      <div class="container director-layout">
+        <div class="director-brand"><img class="dot2-logo" src="Assets/Dot2-Logo.svg" alt="Dot2. logo" width="76" height="144" loading="lazy" decoding="async"><div><h2 id="dot2-heading">Dot2. LTD</h2><p class="director-role">Director</p></div></div>
+        <div class="director-copy"><p class="lead">As a director at Dot2. LTD, I lead the strategy and day-to-day running of our mousepad business.</p><p>I make decisions across product design, supplier negotiations, Amazon listings, pricing and marketing, as well as developing the website and internal tools.</p><a class="text-link" href="#dot2-website">See the Dot2. website project <span aria-hidden="true">↘</span></a></div>
       </div>
-    </div>
-    <script src="script.js"></script>
-    <script src="Packages/lightbox-plus-jquery.js"></script>
+    </section>
+
+    <section class="contact-section container" id="contact" aria-labelledby="contact-heading">
+      <div><h2 id="contact-heading">Contact</h2><p>Find me on LinkedIn and GitHub, or download either CV below.</p></div>
+      <div class="contact-links"><a href="https://linkedin.com/in/mglockhart" target="_blank" rel="noopener noreferrer"><span>LinkedIn<small>Professional profile</small></span><span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="https://github.com/sjglm" target="_blank" rel="noopener noreferrer"><span>GitHub<small>Code & contributions</small></span><span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="Assets/Matthew-Lockhart-CV.pdf" target="_blank" rel="noopener noreferrer"><span>Software engineering CV<small>PDF · Experience & technical skills</small></span><span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a><a href="Assets/Matthew-Lockhart-CV-Game-Dev.pdf" target="_blank" rel="noopener noreferrer"><span>Game development CV<small>PDF · Gameplay & systems design</small></span><span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></div>
+    </section>
+  </main>
+  <footer class="site-footer container"><a class="wordmark" href="#top" aria-label="Matthew Lockhart, back to top">ML</a><p>© <span id="year">2026</span> Matthew Lockhart</p><a class="text-link" href="#top">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <dialog class="gallery-dialog" aria-labelledby="gallery-caption">
+    <div class="gallery-toolbar"><p id="gallery-position" aria-live="polite" aria-atomic="true"></p><button class="gallery-close" type="button" aria-label="Close gallery">Close <span aria-hidden="true">×</span></button></div>
+    <div class="gallery-stage"><button class="gallery-previous" type="button" aria-label="Previous image">←</button><img id="gallery-image" alt=""><button class="gallery-next" type="button" aria-label="Next image">→</button></div>
+    <p id="gallery-caption" aria-live="polite" aria-atomic="true"></p>
+  </dialog>
 </body>
-
 </html>

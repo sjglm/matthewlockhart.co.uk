@@ -1,0 +1,36 @@
+{
+  "source_page": "https://store.steampowered.com/app/5370920/So_You_Think_You_Can_Talk/",
+  "retrieved": "2026-11-05",
+  "assets": [
+    {
+      "file": "Assets\\SYTYCT-ASSETS\\Steam-Header.jpg",
+      "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5370920/3a183c83e1523d005e9e8905a2faf42f94ac8e42/header.jpg?t=1792403679",
+      "bytes": 46303
+    },
+    {
+      "file": "Assets\\SYTYCT-ASSETS\\Steam-Screenshot-01.jpg",
+      "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5370920/a6059aed244d6272663158abdbb44c0dba1aed94/ss_a6059aed244d6272663158abdbb44c0dba1aed94.1920x1080.jpg?t=1792403679",
+      "bytes": 407020
+    },
+    {
+      "file": "Assets\\SYTYCT-ASSETS\\Steam-Screenshot-02.jpg",
+      "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5370920/500b4e64f921e57e2f6f957ace35f04a5cc4b621/ss_500b4e64f921e57e2f6f957ace35f04a5cc4b621.1920x1080.jpg?t=1792403679",
+      "bytes": 256488
+    },
+    {
+      "file": "Assets\\SYTYCT-ASSETS\\Steam-Screenshot-03.jpg",
+      "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5370920/9a5c6a55c45007949ab41a1265061511a4933216/ss_9a5c6a55c45007949ab41a1265061511a4933216.1920x1080.jpg?t=1792403679",
+      "bytes": 251770
+    },
+    {
+      "file": "Assets\\SYTYCT-ASSETS\\Steam-Screenshot-04.jpg",
+      "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5370920/4594dba0c5ebd166fcdf786217c912cb76418b5a/ss_4594dba0c5ebd166fcdf786217c912cb76418b5a.1920x1080.jpg?t=1792403679",
+      "bytes": 394637
+    },
+    {
+      "file": "Assets\\SYTYCT-ASSETS\\Steam-Screenshot-05.jpg",
+      "source": "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/5370920/25b9cc4109f75457e29b3d11f410babf8aeaf946/ss_25b9cc4109f75457e29b3d11f410babf8aeaf946.1920x1080.jpg?t=1792403679",
+      "bytes": 152137
+    }
+  ]
+}
