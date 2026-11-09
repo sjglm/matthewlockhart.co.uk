@@ -177,6 +177,9 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
 }
 .games-section .section-heading .eyebrow{color:#c4b6ff}
 .games-section .section-heading>p{color:#c8c0d7}
+.games-section .studio-link{flex-shrink:0;min-height:44px;gap:10px;color:#d6c6fb}
+.games-section .studio-link:hover{color:#fff}
+.games-section .studio-link:focus-visible{outline-color:#e3d5ff}
 .game-grid{--card-highlight:#c8b6ff;--card-glow:#c8b6ff26;--card-shadow:#0d091f59}
 .game-grid .project-card{background:#30283f;border-color:#594b6a}
 .game-grid .project-type{color:#c8bcf5}
@@ -273,6 +276,9 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
     color:#f5efe7;
   }
   html[data-theme="dark"] .games-section .section-heading>p{color:#b8aea2}
+  html[data-theme="dark"] .games-section .studio-link{color:var(--accent)}
+  html[data-theme="dark"] .games-section .studio-link:hover{color:#ffb575}
+  html[data-theme="dark"] .games-section .studio-link:focus-visible{outline-color:#ffb575}
   html[data-theme="dark"] .game-grid .project-card{background:#17130f;border-color:#493a2d}
   html[data-theme="dark"] .game-grid .project-type{color:#f1b681}
   html[data-theme="dark"] .game-grid .project-description{color:#d0c0af}
