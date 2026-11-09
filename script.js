@@ -50,17 +50,18 @@ function showImage(index) {
 }
 
 if (dialog && typeof dialog.showModal === "function") {
-  document.querySelectorAll(".gallery-cover").forEach((cover) => {
-    cover.addEventListener("click", (event) => {
-      if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
-      event.preventDefault();
-      activeImages = Array.from(document.querySelectorAll("a[data-gallery]"))
-        .filter((link) => link.dataset.gallery === cover.dataset.gallery);
-      showImage(0);
-      previousButton.hidden = nextButton.hidden = activeImages.length < 2;
-      dialog.showModal();
-      document.body.classList.add("gallery-open");
-    });
+  // Delegation also supports photos added when a travel entry is selected.
+  document.addEventListener("click", (event) => {
+    const cover = event.target instanceof Element ? event.target.closest("a.gallery-cover") : null;
+    if (!cover) return;
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    activeImages = Array.from(document.querySelectorAll("a[data-gallery]"))
+      .filter((link) => link.dataset.gallery === cover.dataset.gallery);
+    showImage(activeImages.indexOf(cover));
+    previousButton.hidden = nextButton.hidden = activeImages.length < 2;
+    dialog.showModal();
+    document.body.classList.add("gallery-open");
   });
   previousButton.addEventListener("click", () => showImage(activeIndex - 1));
   nextButton.addEventListener("click", () => showImage(activeIndex + 1));

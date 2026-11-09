@@ -1,0 +1,33 @@
+{
+  "countries": [
+    {
+      "id": "GBR",
+      "name": "United Kingdom",
+      "home": true,
+      "notes": ["Based in Yorkshire, England."],
+      "photos": []
+    },
+    { "id": "AND", "name": "Andorra", "notes": [], "photos": [] },
+    { "id": "AUT", "name": "Austria", "notes": [], "photos": [] },
+    { "id": "BEL", "name": "Belgium", "notes": [], "photos": [] },
+    { "id": "CZE", "name": "Czechia", "notes": [], "photos": [] },
+    { "id": "DNK", "name": "Denmark", "notes": [], "photos": [] },
+    { "id": "FIN", "name": "Finland", "notes": [], "photos": [] },
+    { "id": "FRA", "name": "France", "notes": [], "photos": [] },
+    { "id": "DEU", "name": "Germany", "notes": [], "photos": [] },
+    { "id": "GRC", "name": "Greece", "notes": [], "photos": [] },
+    { "id": "ISL", "name": "Iceland", "notes": [], "photos": [] },
+    { "id": "ITA", "name": "Italy", "notes": [], "photos": [] },
+    { "id": "NLD", "name": "Netherlands", "notes": [], "photos": [] },
+    { "id": "NOR", "name": "Norway", "notes": [], "photos": [] },
+    { "id": "POL", "name": "Poland", "notes": [], "photos": [] },
+    { "id": "ZAF", "name": "South Africa", "notes": [], "photos": [] },
+    { "id": "ESP", "name": "Spain", "notes": [], "photos": [] },
+    { "id": "SWE", "name": "Sweden", "notes": [], "photos": [] },
+    { "id": "CHE", "name": "Switzerland", "notes": [], "photos": [] },
+    { "id": "TUR", "name": "Turkey", "notes": [], "photos": [] },
+    { "id": "USA", "name": "United States", "notes": [], "photos": [] },
+    { "id": "ZMB", "name": "Zambia", "notes": [], "photos": [] },
+    { "id": "ZWE", "name": "Zimbabwe", "notes": [], "photos": [] }
+  ]
+}

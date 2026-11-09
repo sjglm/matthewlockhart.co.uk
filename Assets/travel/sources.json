@@ -1,0 +1,15 @@
+{
+  "map": {
+    "name": "Natural Earth 1:50m Admin 0 countries",
+    "source": "https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson",
+    "licence": "Public domain",
+    "terms": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "processing": "Retained ADM0_A3, NAME_EN and label coordinates; simplified rings at 0.055 degrees and rounded to 3 decimal places. Normalized each polygon?s spherical winding and removed degenerate polygons for D3 rendering."
+  },
+  "renderer": {
+    "name": "D3 Geo 3.1.1 with D3 Array 3.2.4",
+    "source": "https://d3js.org/d3-geo",
+    "licence": "ISC",
+    "licenceFile": "../vendor/d3-geo-LICENSE.txt"
+  }
+}
