@@ -137,18 +137,23 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
 .director-copy>.text-link{margin-top:24px}
 
 /* Project cards */
-.project-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px}
-.project-card{display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
+#projects,.games-section{--content-width:1360px}
+.project-grid{--card-highlight:var(--accent);--card-glow:#6344ce1f;--card-shadow:#22261f1a;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.project-card{position:relative;display:flex;flex-direction:column;min-width:0;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:var(--white);outline:1px solid transparent;outline-offset:0;transition:transform .22s ease,box-shadow .22s ease,outline-color .22s ease}
+.project-card:focus-within{z-index:1;outline-color:var(--card-highlight);box-shadow:0 0 0 5px var(--card-glow),0 14px 32px var(--card-shadow)}
+@media screen and (hover:hover) and (pointer:fine){
+  .project-card:hover{z-index:1;transform:translateY(-4px) scale(1.015);outline-color:var(--card-highlight);box-shadow:0 0 0 5px var(--card-glow),0 14px 32px var(--card-shadow)}
+}
 .project-media{position:relative;display:block;width:100%;aspect-ratio:16/9;overflow:hidden;background:#eee}
 .project-media>img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
 .gallery-cover:hover>img{transform:scale(1.035)}
-.project-body{display:flex;flex:1;flex-direction:column;padding:23px}
-.project-type{margin-bottom:9px;color:var(--accent);font-size:.65rem;font-weight:650;letter-spacing:.055em}
+.project-body{display:flex;flex:1;flex-direction:column;padding:28px}
+.project-type{margin-bottom:9px;color:var(--accent);font-size:.68rem;font-weight:650;letter-spacing:.055em}
 .project-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-bottom:9px}
 .project-meta .project-type{margin:0}
 .university-tag{display:inline-block;padding:3px 7px;border:1px solid #d4caed;border-radius:5px;background:var(--accent-soft);color:#5939b3;font-size:.61rem;font-weight:600;line-height:1.5;white-space:nowrap}
-.project-body h3{font-size:1.25rem}
-.project-description{margin:14px 0 21px;color:var(--muted);font-size:.84rem;line-height:1.75}
+.project-body h3{font-size:1.4rem}
+.project-description{margin:16px 0 24px;color:var(--muted);font-size:.9rem;line-height:1.75}
 .project-body .tags{margin-top:auto}
 .project-placeholder{display:flex;flex-direction:column;justify-content:center;padding:25px;isolation:isolate}
 .placeholder-category,.placeholder-note{position:relative;z-index:1;font-size:.55rem;letter-spacing:.12em;text-transform:uppercase}
@@ -167,6 +172,7 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
 }
 .games-section .section-heading .eyebrow{color:#c4b6ff}
 .games-section .section-heading>p{color:#c8c0d7}
+.game-grid{--card-highlight:#c8b6ff;--card-glow:#c8b6ff26;--card-shadow:#0d091f59}
 .game-grid .project-card{background:#30283f;border-color:#594b6a}
 .game-grid .project-type{color:#c8bcf5}
 .game-grid .project-description{color:#d0c9dc}
@@ -256,6 +262,7 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
   html[data-theme="dark"] .dot2-project-cover{background:#211d18}
   html[data-theme="dark"] .project-link{border-color:#7a4b25}
   html[data-theme="dark"] .project-link:hover{color:#ff9d3f;border-color:currentColor}
+  html[data-theme="dark"] .project-grid{--card-highlight:var(--accent);--card-glow:#ed812226;--card-shadow:#0007}
   html[data-theme="dark"] .games-section{
     background-color:#0b0a09;
     background-image:radial-gradient(ellipse at 10% 0%,#79502024,transparent 50%),radial-gradient(ellipse at 95% 100%,#3f4b2524,transparent 45%),url("Assets/game-pattern.svg");
@@ -295,8 +302,8 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
   .experience-row{grid-template-columns:195px minmax(0,1fr);gap:30px}
   .section-heading{gap:28px}.section-heading>p{max-width:270px}
   .director-layout,.contact-section{gap:55px}
-  .project-grid{gap:18px}.project-body{padding:19px}.project-body h3{font-size:1.12rem}
-  .game-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.game-grid .placeholder-title{font-size:2.1rem}
+  .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.project-body{padding:24px}.project-body h3{font-size:1.3rem}
+  .game-grid .placeholder-title{font-size:2.1rem}
 }
 @media(max-width:800px){
   .container{width:calc(100% - 40px)}
@@ -347,8 +354,8 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
 @media(max-width:360px){
   .container{width:calc(100% - 30px)}.site-header nav{gap:11px}.site-header nav a{font-size:.67rem}.hero .eyebrow{font-size:.68rem;letter-spacing:.08em}
 }
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.project-card,.gallery-cover>img{transform:none!important}}
 @media print{
   .site-header,.hero-aside,.hero-actions,.gallery-dialog{display:none}
-  .container{width:100%}.hero,.section,.director-section,.education-section,.games-section,.contact-section{padding-block:24px}.hero h1{font-size:3rem}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-card,.experience-row,.education-entry{break-inside:avoid}
+  .container{width:100%}.hero,.section,.director-section,.education-section,.games-section,.contact-section{padding-block:24px}.hero h1{font-size:3rem}.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-card,.project-card:focus-within{transform:none;box-shadow:none;outline:0}.project-card,.experience-row,.education-entry{break-inside:avoid}
 }
