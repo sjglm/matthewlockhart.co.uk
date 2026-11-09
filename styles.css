@@ -121,8 +121,13 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
 .module-ungraded{color:var(--muted);font-size:.72rem}
 .courses-section{padding-block:0}
 .courses-section .section-heading{margin-bottom:24px}
-.courses-list{padding:24px 26px;border:1px dashed #c8cebf;border-radius:8px;background:#f1f3ed}
-.courses-empty{color:var(--muted);font-size:.9rem}
+.courses-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:38px;padding:0;margin:0;border-top:1px solid var(--line);list-style:none}
+.course-item{min-width:0;padding:23px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.course-heading{display:flex;align-items:baseline;justify-content:space-between;gap:18px}
+.course-heading h3{font-size:1.05rem;line-height:1.4;letter-spacing:-.015em}
+.course-heading time{flex-shrink:0;color:var(--muted);font-size:.74rem;white-space:nowrap}
+.course-provider{margin-top:9px;color:var(--accent);font-size:.79rem;font-weight:600;line-height:1.6}
+.course-note{margin-top:8px;color:var(--muted);font-size:.79rem;line-height:1.7}
 
 /* Directorship */
 .director-section{padding-block:72px;border-block:1px solid #ded9ed;background:var(--accent-soft)}
@@ -254,7 +259,6 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
   html[data-theme="dark"] .tags li{background:#211d18;border-color:#4c4033;color:#d3c5b3}
   html[data-theme="dark"] :is(.qualification-result,.qualification-grade,.university-tag){background:#2b1d11;border-color:#795131;color:#f3bc8d}
   html[data-theme="dark"] .year-results .year-results-overall{border-color:#b46b30}
-  html[data-theme="dark"] .courses-list{background:#191714;border-color:#564736}
   html[data-theme="dark"] .director-section{border-color:#493323}
   html[data-theme="dark"] .director-copy>p:not(.lead){color:#d1bcaa}
   html[data-theme="dark"] .director-role span{color:#ae8b68}
@@ -315,6 +319,7 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
   .section{padding-block:65px}.section-heading{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:30px}.section-heading>p{max-width:500px}
   .experience-row{grid-template-columns:155px minmax(0,1fr);gap:25px}.experience-date{font-size:.72rem}.experience-content h3{font-size:1.3rem}.experience-points{font-size:.86rem}
   .education-section{padding-top:0}.courses-section{padding-block:0}
+  .courses-list{grid-template-columns:1fr}
   .director-section{padding-block:55px}.director-layout{grid-template-columns:1fr;gap:30px}.director-layout h2 br{display:none}.director-role{margin-top:16px}
   .project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.placeholder-title{font-size:1.7rem}.game-grid .placeholder-title{font-size:1.9rem}
   .games-section{padding-block:65px}.contact-section{gap:35px;padding-block:65px}.desktop-break{display:none}
@@ -337,7 +342,7 @@ html[data-theme="dark"] .theme-icon-sun{display:block}
   .year-results{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
   .module-details>summary{gap:9px;font-size:.8rem}.module-summary-count{font-size:.66rem}
   .module-table{font-size:.79rem}.module-table tbody th{padding-right:12px}
-  .courses-list{padding:20px}
+  .course-item{padding-block:20px}.course-heading{gap:12px}.course-heading h3{font-size:1rem}
   .director-layout .eyebrow{margin-bottom:15px}.director-copy .lead{font-size:1.02rem}
   .director-brand{gap:18px}.dot2-logo{width:60px;height:115px}
   .project-grid{grid-template-columns:1fr;gap:23px}.project-body{padding:23px}.project-body h3{font-size:1.35rem}.project-description{font-size:.87rem}.project-type{font-size:.68rem}
