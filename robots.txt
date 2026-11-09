@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.matthewlockhart.co.uk/sitemap.xml
