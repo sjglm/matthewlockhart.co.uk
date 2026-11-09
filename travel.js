@@ -17,8 +17,6 @@
   const notes = section.querySelector("[data-entry-notes]");
   const photos = section.querySelector("[data-entry-photos]");
   const emptyPhotos = section.querySelector("[data-photos-empty]");
-  const cruiseList = section.querySelector("[data-cruise-list]");
-  const allCruises = section.querySelector("[data-cruise-all]");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const initialRotation = [-15, -25, 0];
   const minZoom = .85;
@@ -82,31 +80,34 @@
     return cruiseDateFormat.format(new Date(`${date}T00:00:00Z`));
   }
 
-  function updateCruiseStyles() {
+  function updateMapSelection() {
     const highlighted = hoveredCruiseId || activeCruiseId;
     cruiseRoutes.forEach(({ group, cruise }) => {
       group.classList.toggle("is-highlighted", cruise.id === highlighted);
       group.classList.toggle("is-muted", Boolean(highlighted && cruise.id !== highlighted));
     });
-    cruiseList?.querySelectorAll("[data-cruise-card]").forEach(card => {
-      const selected = card.dataset.cruiseCard === activeCruiseId;
-      card.classList.toggle("is-selected", selected);
-      card.querySelector("button").setAttribute("aria-pressed", String(selected));
+    list.querySelectorAll("[data-cruise-choice]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.cruiseChoice === activeCruiseId));
     });
-    if (allCruises) allCruises.hidden = !activeCruiseId;
+    list.querySelectorAll("button[data-country]").forEach(button => {
+      button.setAttribute("aria-pressed", String(!activeCruiseId && button.dataset.country === selectedId));
+    });
+    [...countryPaths, ...pins].forEach(({ node, feature }) => {
+      node.classList.toggle("is-selected", !activeCruiseId && feature.id === selectedId);
+    });
   }
 
   function hoverCruise(id) {
     if (hoveredCruiseId === id) return;
     hoveredCruiseId = id;
-    updateCruiseStyles();
+    updateMapSelection();
     requestDraw();
   }
 
   function clearCruiseSelection() {
     activeCruiseId = null;
     hoveredCruiseId = null;
-    updateCruiseStyles();
+    updateMapSelection();
     requestDraw();
   }
 
@@ -116,7 +117,16 @@
     activeCruiseId = id;
     hoveredCruiseId = null;
     tooltip.hidden = true;
-    updateCruiseStyles();
+    title.textContent = cruise.name;
+    label.textContent = "Cruise";
+    const dates = document.createElement("p");
+    dates.textContent = `${formatCruiseDate(cruise.departureDate)} – ${formatCruiseDate(cruise.returnDate)}`;
+    const itinerary = document.createElement("p");
+    itinerary.textContent = cruise.ports.map(port => port.name).join(" → ");
+    notes.replaceChildren(dates, itinerary);
+    photos.replaceChildren();
+    emptyPhotos.hidden = false;
+    updateMapSelection();
     if (projection) {
       const centre = window.d3.geoCentroid(cruise.feature);
       const angle = Math.max(...cruise.coordinates.map(point => window.d3.geoDistance(centre, point)));
@@ -128,57 +138,21 @@
   }
 
   function renderCruises() {
-    if (!cruiseList || !cruises.length) return;
-    cruiseList.replaceChildren();
+    list.querySelectorAll("[data-cruise-choice]").forEach(button => button.remove());
     cruises.forEach((cruise, index) => {
-      const card = document.createElement("li");
-      card.className = "cruise-card";
-      card.dataset.cruiseCard = cruise.id;
-      card.dataset.cruiseColour = String(index % 3);
-      const heading = document.createElement("div");
-      heading.className = "cruise-card-title";
-      const name = document.createElement("h3");
-      name.textContent = cruise.name;
-      heading.append(name);
-      const line = document.createElement("p");
-      line.className = "cruise-line";
-      line.textContent = cruise.line || "";
-      const dates = document.createElement("p");
-      dates.className = "cruise-date";
-      [cruise.departureDate, cruise.returnDate].forEach((date, i) => {
-        if (i) dates.append(" – ");
-        const time = document.createElement("time");
-        time.dateTime = date;
-        time.textContent = formatCruiseDate(date);
-        dates.append(time);
-      });
-      const itinerary = document.createElement("p");
-      itinerary.className = "cruise-itinerary";
-      itinerary.textContent = cruise.ports.map(port => port.name).join(" → ");
-      const actions = document.createElement("div");
-      actions.className = "cruise-actions";
       const button = document.createElement("button");
       button.type = "button";
-      button.className = "cruise-route-button";
-      button.textContent = "Show route";
+      button.className = "travel-cruise-choice";
+      button.dataset.cruiseChoice = cruise.id;
+      button.dataset.cruiseColour = String(index % 3);
+      button.textContent = cruise.name;
+      button.title = `${formatCruiseDate(cruise.departureDate)} – ${formatCruiseDate(cruise.returnDate)}`;
       button.setAttribute("aria-label", `Show ${cruise.name} route`);
       button.setAttribute("aria-pressed", "false");
       button.addEventListener("click", () => selectCruise(cruise.id));
-      actions.append(button);
-      if (/^https:\/\//.test(cruise.itineraryUrl || "")) {
-        const source = document.createElement("a");
-        source.className = "cruise-source";
-        source.href = cruise.itineraryUrl;
-        source.target = "_blank";
-        source.rel = "noopener noreferrer";
-        source.textContent = "Itinerary ↗";
-        source.setAttribute("aria-label", `${cruise.name} published itinerary (opens in a new tab)`);
-        actions.append(source);
-      }
-      card.append(heading, line, dates, itinerary, actions);
-      cruiseList.append(card);
+      list.append(button);
     });
-    updateCruiseStyles();
+    updateMapSelection();
   }
 
   function stopAnimation() {
@@ -292,8 +266,7 @@
       photos.append(link);
     });
     emptyPhotos.hidden = photos.childElementCount > 0;
-    list.querySelectorAll("button").forEach(button => button.setAttribute("aria-pressed", String(button.dataset.country === id)));
-    [...countryPaths, ...pins].forEach(({ node, feature }) => node.classList.toggle("is-selected", feature.id === id));
+    updateMapSelection();
     const feature = countries.get(id);
     if (rotate && feature) {
       const [longitude, latitude] = feature.properties.label;
@@ -368,7 +341,7 @@
       });
       layers.replaceChildren(sphere, grid, land, shade, routeLayer, markers, portLayer);
       selectEntry(selectedId, false);
-      updateCruiseStyles();
+      updateMapSelection();
       draw();
       svg.removeAttribute("hidden");
       controls.hidden = false;
@@ -473,16 +446,12 @@
     zoom = 1;
     tooltip.hidden = true;
     clearCruiseSelection();
+    selectEntry(selectedId, false);
     rotateTo(initialRotation);
   }
   controls.querySelectorAll("[data-globe-zoom]").forEach(button => button.addEventListener("click", () => zoomBy(Number(button.dataset.globeZoom))));
   controls.querySelector("[data-globe-reset]").addEventListener("click", reset);
   retry.addEventListener("click", loadMap);
-  allCruises?.addEventListener("click", () => {
-    reset();
-    mapCard.scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" });
-    svg.focus({ preventScroll: true });
-  });
   reducedMotion.addEventListener("change", () => {
     if (reducedMotion.matches) stopAnimation();
   });
