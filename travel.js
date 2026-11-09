@@ -17,16 +17,23 @@
   const notes = section.querySelector("[data-entry-notes]");
   const photos = section.querySelector("[data-entry-photos]");
   const emptyPhotos = section.querySelector("[data-photos-empty]");
+  const cruiseList = section.querySelector("[data-cruise-list]");
+  const allCruises = section.querySelector("[data-cruise-all]");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const initialRotation = [-15, -25, 0];
   const minZoom = .85;
-  const maxZoom = 2.6;
+  const maxZoom = 4;
   const ns = "http://www.w3.org/2000/svg";
   let entries = [{ id: "GBR", name: "United Kingdom", home: true, notes: ["Based in Yorkshire, England."], photos: [] }];
   let selectedId = "GBR";
   let countries = new Map();
   let countryPaths = [];
   let pins = [];
+  let cruises = [];
+  let cruiseRoutes = [];
+  let cruisePorts = [];
+  let activeCruiseId = null;
+  let hoveredCruiseId = null;
   let projection;
   let path;
   let graticule;
@@ -70,6 +77,110 @@
     return node;
   }
 
+  const cruiseDateFormat = new Intl.DateTimeFormat("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
+  function formatCruiseDate(date) {
+    return cruiseDateFormat.format(new Date(`${date}T00:00:00Z`));
+  }
+
+  function updateCruiseStyles() {
+    const highlighted = hoveredCruiseId || activeCruiseId;
+    cruiseRoutes.forEach(({ group, cruise }) => {
+      group.classList.toggle("is-highlighted", cruise.id === highlighted);
+      group.classList.toggle("is-muted", Boolean(highlighted && cruise.id !== highlighted));
+    });
+    cruiseList?.querySelectorAll("[data-cruise-card]").forEach(card => {
+      const selected = card.dataset.cruiseCard === activeCruiseId;
+      card.classList.toggle("is-selected", selected);
+      card.querySelector("button").setAttribute("aria-pressed", String(selected));
+    });
+    if (allCruises) allCruises.hidden = !activeCruiseId;
+  }
+
+  function hoverCruise(id) {
+    if (hoveredCruiseId === id) return;
+    hoveredCruiseId = id;
+    updateCruiseStyles();
+    requestDraw();
+  }
+
+  function clearCruiseSelection() {
+    activeCruiseId = null;
+    hoveredCruiseId = null;
+    updateCruiseStyles();
+    requestDraw();
+  }
+
+  function selectCruise(id) {
+    const cruise = cruises.find(item => item.id === id);
+    if (!cruise) return;
+    activeCruiseId = id;
+    hoveredCruiseId = null;
+    tooltip.hidden = true;
+    updateCruiseStyles();
+    if (projection) {
+      const centre = window.d3.geoCentroid(cruise.feature);
+      const angle = Math.max(...cruise.coordinates.map(point => window.d3.geoDistance(centre, point)));
+      zoom = Math.min(maxZoom, Math.max(1, .95 / Math.max(.1, Math.sin(angle))));
+      rotateTo([-centre[0], -centre[1], 0]);
+      svg.focus({ preventScroll: true });
+    }
+    mapCard.scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" });
+  }
+
+  function renderCruises() {
+    if (!cruiseList || !cruises.length) return;
+    cruiseList.replaceChildren();
+    cruises.forEach((cruise, index) => {
+      const card = document.createElement("li");
+      card.className = "cruise-card";
+      card.dataset.cruiseCard = cruise.id;
+      card.dataset.cruiseColour = String(index % 3);
+      const heading = document.createElement("div");
+      heading.className = "cruise-card-title";
+      const name = document.createElement("h3");
+      name.textContent = cruise.name;
+      heading.append(name);
+      const line = document.createElement("p");
+      line.className = "cruise-line";
+      line.textContent = cruise.line || "";
+      const dates = document.createElement("p");
+      dates.className = "cruise-date";
+      [cruise.departureDate, cruise.returnDate].forEach((date, i) => {
+        if (i) dates.append(" – ");
+        const time = document.createElement("time");
+        time.dateTime = date;
+        time.textContent = formatCruiseDate(date);
+        dates.append(time);
+      });
+      const itinerary = document.createElement("p");
+      itinerary.className = "cruise-itinerary";
+      itinerary.textContent = cruise.ports.map(port => port.name).join(" → ");
+      const actions = document.createElement("div");
+      actions.className = "cruise-actions";
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "cruise-route-button";
+      button.textContent = "Show route";
+      button.setAttribute("aria-label", `Show ${cruise.name} route`);
+      button.setAttribute("aria-pressed", "false");
+      button.addEventListener("click", () => selectCruise(cruise.id));
+      actions.append(button);
+      if (/^https:\/\//.test(cruise.itineraryUrl || "")) {
+        const source = document.createElement("a");
+        source.className = "cruise-source";
+        source.href = cruise.itineraryUrl;
+        source.target = "_blank";
+        source.rel = "noopener noreferrer";
+        source.textContent = "Itinerary ↗";
+        source.setAttribute("aria-label", `${cruise.name} published itinerary (opens in a new tab)`);
+        actions.append(source);
+      }
+      card.append(heading, line, dates, itinerary, actions);
+      cruiseList.append(card);
+    });
+    updateCruiseStyles();
+  }
+
   function stopAnimation() {
     cancelAnimationFrame(animationFrame);
     animationFrame = 0;
@@ -89,6 +200,18 @@
       const point = feature.properties.label;
       const [x, y] = projection(point);
       const visible = window.d3.geoDistance(point, centre) < Math.PI / 2 - .02;
+      node.style.display = visible ? "" : "none";
+      node.setAttribute("cx", x);
+      node.setAttribute("cy", y);
+    });
+    cruiseRoutes.forEach(route => {
+      const routePath = path(route.cruise.feature) || "";
+      route.paths.forEach(node => node.setAttribute("d", routePath));
+    });
+    const highlighted = hoveredCruiseId || activeCruiseId;
+    cruisePorts.forEach(({ node, port, cruiseId }) => {
+      const [x, y] = projection(port.coordinates);
+      const visible = cruiseId === highlighted && window.d3.geoDistance(port.coordinates, centre) < Math.PI / 2 - .02;
       node.style.display = visible ? "" : "none";
       node.setAttribute("cx", x);
       node.setAttribute("cy", y);
@@ -130,6 +253,7 @@
   function selectEntry(id, rotate = true) {
     const entry = entries.find(item => item.id === id);
     if (!entry) return;
+    if (rotate) clearCruiseSelection();
     selectedId = id;
     title.textContent = entry.name;
     label.textContent = entry.home ? "Home" : "Visited";
@@ -213,8 +337,12 @@
       shade = makeSVG("path", { class: "globe-shade" });
       const land = makeSVG("g", { "aria-hidden": "true" });
       const markers = makeSVG("g", { "aria-hidden": "true" });
+      const routeLayer = makeSVG("g", { "aria-hidden": "true" });
+      const portLayer = makeSVG("g", { "aria-hidden": "true" });
       countryPaths = [];
       pins = [];
+      cruiseRoutes = [];
+      cruisePorts = [];
       const visited = new Set(entries.map(entry => entry.id));
       world.features.forEach(feature => {
         const node = makeSVG("path", { class: `travel-country${visited.has(feature.id) ? " is-visited" : ""}`, "data-country": feature.id });
@@ -226,13 +354,27 @@
           pins.push({ node: pin, feature });
         }
       });
-      layers.replaceChildren(sphere, grid, land, shade, markers);
+      cruises.forEach((cruise, index) => {
+        const group = makeSVG("g", { class: "cruise-route-group", "data-cruise": cruise.id, "data-cruise-colour": index % 3 });
+        const paths = ["cruise-route-halo", "cruise-route", "cruise-route-hit"].map(className => makeSVG("path", { class: className }));
+        group.append(...paths);
+        routeLayer.append(group);
+        cruiseRoutes.push({ group, paths, cruise });
+        cruise.ports.forEach(port => {
+          const node = makeSVG("circle", { class: "cruise-port", r: "4", "data-cruise": cruise.id, "data-cruise-colour": index % 3, "data-port-name": port.name });
+          portLayer.append(node);
+          cruisePorts.push({ node, port, cruiseId: cruise.id });
+        });
+      });
+      layers.replaceChildren(sphere, grid, land, shade, routeLayer, markers, portLayer);
       selectEntry(selectedId, false);
+      updateCruiseStyles();
       draw();
       svg.removeAttribute("hidden");
       controls.hidden = false;
       status.hidden = true;
       mapCard.classList.add("is-ready");
+      if (activeCruiseId) selectCruise(activeCruiseId);
     } catch {
       status.textContent = "The globe couldn’t load. My travel notes are still available alongside it.";
       retry.hidden = false;
@@ -264,9 +406,11 @@
     stopAnimation();
     svg.focus({ preventScroll: true });
     const country = event.target.closest("[data-country]")?.dataset.country;
-    drag = { id: event.pointerId, x: event.clientX, y: event.clientY, rotation: rotation.slice(), moved: false, country };
+    const cruise = event.target.closest("[data-cruise]")?.dataset.cruise;
+    drag = { id: event.pointerId, x: event.clientX, y: event.clientY, rotation: rotation.slice(), moved: false, country, cruise };
     svg.setPointerCapture(event.pointerId);
     tooltip.hidden = true;
+    hoverCruise(null);
   });
   svg.addEventListener("pointermove", event => {
     if (drag && drag.id === event.pointerId) {
@@ -279,6 +423,15 @@
       rotation = [drag.rotation[0] + dx * sensitivity, Math.max(-85, Math.min(85, drag.rotation[1] - dy * sensitivity)), 0];
       requestDraw();
     } else if (!drag) {
+      const route = event.target.closest("[data-cruise]");
+      const cruise = cruises.find(item => item.id === route?.dataset.cruise);
+      hoverCruise(cruise?.id || null);
+      if (cruise) {
+        const portName = route.dataset.portName;
+        tooltip.hidden = false;
+        tooltip.textContent = `${cruise.name} · ${formatCruiseDate(cruise.departureDate)} – ${formatCruiseDate(cruise.returnDate)}${portName ? ` · ${portName}` : ""}`;
+        return;
+      }
       const id = event.target.closest("[data-country]")?.dataset.country;
       const feature = countries.get(id);
       tooltip.hidden = !feature;
@@ -294,12 +447,15 @@
     drag = null;
     svg.classList.remove("is-dragging");
     if (svg.hasPointerCapture(event.pointerId)) svg.releasePointerCapture(event.pointerId);
-    if (event.type === "pointerup" && !completed.moved && completed.country) selectEntry(completed.country);
+    if (event.type === "pointerup" && !completed.moved) {
+      if (completed.cruise) selectCruise(completed.cruise);
+      else if (completed.country) selectEntry(completed.country);
+    }
   }
   svg.addEventListener("pointerup", finishDrag);
   svg.addEventListener("pointercancel", finishDrag);
   svg.addEventListener("lostpointercapture", finishDrag);
-  svg.addEventListener("pointerleave", () => { tooltip.hidden = true; });
+  svg.addEventListener("pointerleave", () => { tooltip.hidden = true; hoverCruise(null); });
   svg.addEventListener("keydown", event => {
     const arrows = { ArrowLeft: [-12, 0], ArrowRight: [12, 0], ArrowUp: [0, 10], ArrowDown: [0, -10] };
     if (arrows[event.key]) {
@@ -316,11 +472,17 @@
   function reset() {
     zoom = 1;
     tooltip.hidden = true;
+    clearCruiseSelection();
     rotateTo(initialRotation);
   }
   controls.querySelectorAll("[data-globe-zoom]").forEach(button => button.addEventListener("click", () => zoomBy(Number(button.dataset.globeZoom))));
   controls.querySelector("[data-globe-reset]").addEventListener("click", reset);
   retry.addEventListener("click", loadMap);
+  allCruises?.addEventListener("click", () => {
+    reset();
+    mapCard.scrollIntoView({ behavior: reducedMotion.matches ? "instant" : "smooth", block: "start" });
+    svg.focus({ preventScroll: true });
+  });
   reducedMotion.addEventListener("change", () => {
     if (reducedMotion.matches) stopAnimation();
   });
@@ -337,10 +499,26 @@
         });
         if (valid.length) entries = valid;
       }
+      if (Array.isArray(data.cruises)) {
+        const coordinate = point => Array.isArray(point) && point.length === 2 && point.every(Number.isFinite) && Math.abs(point[0]) <= 180 && Math.abs(point[1]) <= 90;
+        const date = value => typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value));
+        const ids = new Set();
+        cruises = data.cruises.filter(cruise => {
+          if (!cruise || typeof cruise.id !== "string" || ids.has(cruise.id) || typeof cruise.name !== "string" || !date(cruise.departureDate) || !date(cruise.returnDate)) return false;
+          if (!Array.isArray(cruise.ports) || cruise.ports.length < 2 || !cruise.ports.every(port => port && typeof port.name === "string" && coordinate(port.coordinates))) return false;
+          ids.add(cruise.id);
+          return true;
+        }).map(cruise => {
+          // Sea waypoints connect published itinerary ports; these are not recorded GPS tracks.
+          const coordinates = Array.isArray(cruise.path) && cruise.path.length >= 2 && cruise.path.every(coordinate) ? cruise.path : cruise.ports.map(port => port.coordinates);
+          return { ...cruise, coordinates, feature: { type: "LineString", coordinates } };
+        });
+      }
     } catch {
       // The home entry remains available if the journal file cannot be loaded.
     }
     renderPlaces();
+    renderCruises();
     await loadMap();
   }
   if ("IntersectionObserver" in window) {

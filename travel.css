@@ -63,6 +63,37 @@
 .travel-photo:only-child{grid-column:1/-1}
 .travel-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .3s ease}
 .travel-photo .gallery-label{right:8px;bottom:8px;padding:5px 8px;font-size:.65rem}
+/* Cruise routes share the globe; their wide invisible strokes make hover easier. */
+[data-cruise-colour="0"]{--cruise-colour:#f3c675}
+[data-cruise-colour="1"]{--cruise-colour:#79d1c7}
+[data-cruise-colour="2"]{--cruise-colour:#b9a6ff}
+.cruise-route-group{opacity:.85}
+.cruise-route-group.is-muted{opacity:.2}
+.cruise-route-group.is-highlighted{opacity:1}
+.cruise-route-halo,.cruise-route,.cruise-route-hit{fill:none;stroke-linecap:round;stroke-linejoin:round;vector-effect:non-scaling-stroke}
+.cruise-route-halo{stroke:#07131bea;stroke-width:5;pointer-events:none}
+.cruise-route{stroke:var(--cruise-colour);stroke-width:2;stroke-dasharray:6 4;pointer-events:none}
+.cruise-route-group.is-highlighted .cruise-route{stroke-width:2.8}
+.cruise-route-hit{stroke:transparent;stroke-width:14;pointer-events:stroke;cursor:pointer}
+.cruise-port{fill:var(--cruise-colour);stroke:#101c24;stroke-width:1.2;cursor:pointer}
+.travel-cruises{margin-top:55px}
+.cruises-heading{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:26px}
+.cruises-heading h2{font-size:clamp(1.8rem,3vw,2.3rem)}
+.cruise-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:0;margin:0;list-style:none}
+.cruise-card{display:flex;flex-direction:column;min-width:0;padding:25px;border:1px solid var(--line);border-radius:var(--radius);background:var(--white)}
+.cruise-card.is-selected{border-color:var(--accent)}
+.cruise-card h3{font-size:1.2rem;line-height:1.25}
+.cruise-card-title{display:flex;align-items:baseline;gap:10px}
+.cruise-card-title::before{content:"";width:16px;height:3px;flex-shrink:0;align-self:center;background:var(--cruise-colour);box-shadow:0 0 0 1px #0002}
+.cruise-line{margin-top:9px;color:var(--muted);font-size:.76rem}
+.cruise-date{margin-top:7px;color:var(--accent);font-size:.8rem;font-weight:600}
+.cruise-itinerary{margin:20px 0 24px;color:var(--muted);font-size:.79rem;line-height:1.85}
+.cruise-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto}
+.cruise-route-button,.cruise-all-routes{min-height:44px;padding:9px 13px;border:1px solid var(--line);border-radius:6px;background:var(--accent-soft);color:var(--accent);font-size:.77rem;font-weight:600}
+.cruise-route-button:hover,.cruise-all-routes:hover{border-color:var(--accent)}
+.cruise-route-button[aria-pressed="true"]{border-color:var(--accent)}
+.cruise-source{font-size:.74rem;color:var(--muted)}
+.cruise-source:hover{color:var(--accent)}
 @media screen{
   html[data-theme="dark"] .life-section{--travel-visited:#ed8122;--travel-visited-edge:#ffd6a8;--travel-glow:#ed812299;--travel-land:#3e514f;--travel-border:#82948a;--travel-panel:#10191d}
 }
@@ -76,6 +107,7 @@
   .travel-globe-wrap{width:min(100%,600px);margin-inline:auto}
   .travel-map-footer{gap:22px}.travel-map-footer #globe-help{max-width:340px}
   .travel-journal{grid-template-columns:minmax(170px,.75fr) minmax(0,1.25fr);align-items:start}
+  .cruise-list{grid-template-columns:1fr}.cruise-card{padding:24px}
 }
 @media(max-width:560px){
   .life-page .life-section{padding-top:35px}
@@ -83,7 +115,8 @@
   .travel-map-footer{padding:0 20px 21px;gap:17px}
   .travel-journal{grid-template-columns:1fr;gap:21px}.travel-entry{padding:24px}
   .travel-entry h3{font-size:1.7rem}.travel-photos-empty{min-height:170px}
+  .travel-cruises{margin-top:40px}.cruises-heading{align-items:flex-start;flex-wrap:wrap;gap:15px}.cruise-card{padding:22px}
 }
 @media print{
-  .travel-map-card,.travel-country-list{display:none}.travel-layout,.travel-journal{display:block}.travel-entry{margin-top:20px;break-inside:avoid}
+  .travel-map-card,.travel-country-list,.cruise-actions,.cruise-all-routes{display:none}.travel-layout,.travel-journal{display:block}.travel-entry{margin-top:20px;break-inside:avoid}.cruise-card{break-inside:avoid}
 }

@@ -29,5 +29,80 @@
     { "id": "USA", "name": "United States", "notes": [], "photos": [] },
     { "id": "ZMB", "name": "Zambia", "notes": [], "photos": [] },
     { "id": "ZWE", "name": "Zimbabwe", "notes": [], "photos": [] }
+  ],
+  "cruises": [
+    {
+      "id": "sun-princess-2025",
+      "name": "Sun Princess",
+      "line": "Princess Cruises",
+      "departureDate": "2025-05-03",
+      "returnDate": "2025-05-10",
+      "itineraryUrl": "https://www.princess.com/html/global/brochures/sg/Europe_2025_e-Brochure_Lite.pdf",
+      "ports": [
+        { "name": "Civitavecchia (Rome)", "coordinates": [11.786, 42.095] },
+        { "name": "Naples", "coordinates": [14.266, 40.836] },
+        { "name": "Chania, Crete", "coordinates": [24.071, 35.489] },
+        { "name": "Istanbul", "coordinates": [28.987, 41.026] },
+        { "name": "Mykonos", "coordinates": [25.324, 37.464] },
+        { "name": "Piraeus (Athens)", "coordinates": [23.635, 37.937] }
+      ],
+      "path": [
+        [11.786,42.095], [11.4,41.7], [12.5,40.6], [14.266,40.836],
+        [14.15,40.45], [14.7,39.4], [15.55,38.28], [15.63,38.15], [15.55,37.95],
+        [17,37], [20,35.7], [23,35.55], [24.071,35.489],
+        [24.2,35.5], [24.2,35.75], [25,36.3], [25.65,37.4], [25.35,38.7],
+        [25.7,39.5], [26.15,40], [26.4,40.2], [26.75,40.45], [27.6,40.7], [28.987,41.026],
+        [27.6,40.7], [26.75,40.45], [26.4,40.2], [26.15,40], [25.8,39.5], [25.1,38.7],
+        [25.324,37.464], [24.65,37.65], [24,37.8], [23.635,37.937]
+      ]
+    },
+    {
+      "id": "iona-2025",
+      "name": "P&O Iona",
+      "line": "P&O Cruises",
+      "departureDate": "2025-08-23",
+      "returnDate": "2025-08-30",
+      "itineraryUrl": "https://www.pocruises.com/find-a-cruise/G527/G527",
+      "ports": [
+        { "name": "Southampton", "coordinates": [-1.404, 50.896] },
+        { "name": "Stavanger", "coordinates": [5.731, 58.972] },
+        { "name": "Flåm", "coordinates": [7.115, 60.863] },
+        { "name": "Olden", "coordinates": [6.806, 61.835] },
+        { "name": "Haugesund", "coordinates": [5.263, 59.412] },
+        { "name": "Southampton", "coordinates": [-1.404, 50.896] }
+      ],
+      "path": [
+        [-1.404,50.896], [-1.32,50.8], [-1.24,50.72], [-1.06,50.74], [-0.7,50.56],
+        [0.2,50.5], [1.6,50.95], [2.2,53], [3.2,55], [4.5,57.5], [5.731,58.972],
+        [5.1,59], [4.2,60], [4.4,61], [5.1,61.05], [5.7,61.1], [6.25,61.15],
+        [6.7,61.06], [7.05,60.98], [7.115,60.863],
+        [7.05,60.98], [6.7,61.06], [6.25,61.15], [5.7,61.1], [5.1,61.05], [4.4,61],
+        [4.6,61.5], [5,61.9], [5.4,61.9], [5.85,61.88], [6.2,61.87], [6.6,61.86], [6.806,61.835],
+        [6.6,61.86], [6.2,61.87], [5.85,61.88], [5.4,61.9], [5,61.9], [4.6,61.5], [4.2,60.2], [5.263,59.412],
+        [4.5,59.1], [3.5,57], [2.8,54.7], [2.2,52.6], [1.6,50.95], [0.2,50.5],
+        [-0.7,50.56], [-1.06,50.74], [-1.24,50.72], [-1.32,50.8], [-1.404,50.896]
+      ]
+    },
+    {
+      "id": "legend-2026",
+      "name": "Legend of the Seas",
+      "line": "Royal Caribbean",
+      "departureDate": "2026-07-04",
+      "returnDate": "2026-07-11",
+      "itineraryUrl": "https://hellocruise.co.uk/legend-of-the-seas/cruises/04-july-2026-7-nights-516101/",
+      "ports": [
+        { "name": "Civitavecchia (Rome)", "coordinates": [11.786, 42.095] },
+        { "name": "Marseille", "coordinates": [5.344, 43.334] },
+        { "name": "Barcelona", "coordinates": [2.167, 41.352] },
+        { "name": "Palma de Mallorca", "coordinates": [2.631, 39.55] },
+        { "name": "La Spezia", "coordinates": [9.832, 44.099] },
+        { "name": "Civitavecchia (Rome)", "coordinates": [11.786, 42.095] }
+      ],
+      "path": [
+        [11.786,42.095], [10.5,42.35], [9.9,42.6], [9.75,43.1], [8.5,43.3], [5.344,43.334],
+        [2.167,41.352], [2.631,39.55], [5.5,41.3], [8.5,43.45], [9.832,44.099],
+        [9.95,43.5], [10.45,42.9], [11,42.3], [11.786,42.095]
+      ]
+    }
   ]
 }
